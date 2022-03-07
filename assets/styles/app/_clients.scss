@@ -1,0 +1,25 @@
+/* -----------------------------------------------------------------
+    - Clients
+----------------------------------------------------------------- */
+
+.js-carousel-clients {
+  padding-top: rem(8px);
+  padding-bottom: rem(16px);
+
+  .swiper-slide {
+    a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: #fff;
+      font-family: $font-additional;
+      font-weight: 600;
+      img {
+        margin-right: 8px;
+      }
+    }
+    @media only screen and (max-width: $small) {
+      text-align: center;
+    }
+  }
+}

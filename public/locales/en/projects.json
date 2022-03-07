@@ -1,0 +1,18 @@
+{
+  "projects": "My projects",
+  "present": "Present",
+  "firstProjectTitle": "Uralenergotel e-Shop",
+  "firstProjectDescription": "Built SEO ready e-shop that allowed company to attract more customers. Application is as pure Laravel 5 monolith with MySQL and jQuery.",
+  "secondProjectTitle": "Uralenergotel Local Site",
+  "secondProjectDescription": "Integrated local web site using Wordpress to use with asterisk service allowing people to easily listen for passed calls.",
+  "thirdProjectTitle": "Uralenergotel CRM",
+  "thirdProjectDescription": "Designed and developed a CRM application for specific company needs using Laravel, Postgres, Nuxt and Redis. It allows to sync products from suppliers to e-shop, make and schedule calls (using Asterisk), create/sign invoices and send it to customers with a few clicks and way way more. It resulted in productivity growth and sales increase for more than 80%!",
+  "fourthProjectTitle": "Insly Broker SAAS",
+  "fourthProjectDescription": "Was responsible for PHP/Symfony based backend, that allowed insurance brokers to interact with customers and collect installments for insurance. Integrated new features, calculation logics, user dashboard.",
+  "fifthProjectTitle": "Energetic Hub Telephony SAAS",
+  "fifthProjectDescription": "Application that allowed contact centers to collect calls analytics. Was in charge of building Laravel backend and complex database queries to structure asterisk data in a user friendly way.",
+  "sixthProjectTitle": "MeTime SAAS",
+  "sixthProjectDescription": "MeTime provides a simple way to connect medical professionals and people looking for cosmetic procedures. My main goal on this project was to implement VueJs frontend with a newly created design.",
+  "seventhProjectTitle": "VitaStudents",
+  "seventhProjectDescription": "VitaStudent allow people around the world to find accommodation for their study in UK/ES. I am responsible for destructuring monolith system and use DDD to build multiple apps with the ability for users to check their booking, see accommodation updates, receive required services. Setting up AWS Fargate, writing required Lambda functions, syncing scripts. Mostly using NodeJs, Typescript and React here."
+}

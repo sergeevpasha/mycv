@@ -1,0 +1,55 @@
+.meter {
+  position: relative;
+  border-radius: 1rem;
+  height: 24px;
+  font-size: .75rem;
+  margin-bottom: 1.5rem;
+  background: #302C40;
+  overflow: hidden;
+}
+
+.meter span {
+  display: block;
+  height: 100%;
+}
+
+.progress {
+  position: relative;
+  background-color: #0D86FF;
+  border-radius: 1rem;
+  -webkit-animation: progressBar .5s ease-in-out;
+  -webkit-animation-fill-mode:both;
+  -moz-animation: progressBar .5s ease-in-out;
+  -moz-animation-fill-mode:both;
+}
+
+.progressText {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  padding-left: 0.8125rem;
+  padding-right: 0.8125rem;
+  z-index: 1;
+  span {
+    display: flex;
+    align-items: center;
+    &:nth-child(2) {
+      text-align: right;
+    }
+  }
+}
+
+@-webkit-keyframes progressBar {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+@-moz-keyframes progressBar {
+  0% { width: 0; }
+  100% { width: 100%; }
+}

@@ -1,0 +1,14 @@
+{
+  "title": "About Me",
+  "firstParagraph": "I'm a Software Engineer, working in web development as a backend and frontend developer. Passionate about doing a good job, learning new frameworks and technologies",
+  "secondParagraph": "My job is to build complex web applications, so I am experienced in a complete cycle of development, starting from POC (Proof of Concepts), converting PSD/Sketch (you name it) to HTML, building UML diagrams and migrations for DB, creating backend and frontend communicating by RESTfull API, Websockets, SSE. Ending with deploying and scaling with CI/CD on AWS, and splitting required pieces of code to Lambda functions.",
+  "skills": "What I'm Doing",
+  "backendDevTitle": "PHP / Laravel Development",
+  "backendDevBody": "Building API, Serverless functions and sometimes Monoliths.",
+  "frontendDevTitle": "JS / Vue / React Development",
+  "frontendDevBody": "High-quality development of interactive sites at the professional level.",
+  "htmlDevTitle": "HTML/CSS Markup",
+  "htmlDevBody": "Professional page layouts using SCSS/SASS with responsive design.",
+  "databaseArchitectureTitle": "Database Architecture",
+  "databaseArchitectureBody": "I make UML Diagrams, writing SQL Queries, Views and generated columns."
+}
