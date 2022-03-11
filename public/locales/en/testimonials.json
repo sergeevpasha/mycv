@@ -1,7 +1,9 @@
 {
   "testimonials": "Testimonials",
-  "firstReviewerName": "Vladislav Panfilov",
-  "firstReviewerText": "Pavel is very easy to work with person, able to work under hard deadlines and participating in team decisions.",
-  "secondReviewerName": "Sergey Lemeshev",
-  "secondReviewerText": "Great PHP developer to work with, good knowledge of GoF patterns, SOLID, GRASP. Experienced with docker."
+  "firstReviewerName": "Pavel Tsymbal",
+  "firstReviewerText": "Worked with Pavel on the same project using Laravel/Vue, Pavel knowledge with this technologies helped us speed up development to a new level.",
+  "secondReviewerName": "Vladislav Panfilov",
+  "secondReviewerText": "Pavel is very easy to work with person, able to work under hard deadlines and participating in team decisions.",
+  "thirdReviewerName": "Sergey Lemeshev",
+  "thirdReviewerText": "Great PHP developer to work with, good knowledge of GoF patterns, SOLID, GRASP. Experienced with docker."
 }

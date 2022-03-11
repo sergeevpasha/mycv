@@ -39,12 +39,12 @@ function Testimonials(props: TestimonialsProps) {
                     <div className="swiper-slide review-item">
                         <svg className="avatar avatar--80" viewBox="0 0 84 84">
                             <g className="avatar__hexagon">
-                                <image xlinkHref="/images/vladislavPanfilov.jpeg" height="100%" width="100%" />
+                                <image xlinkHref="/images/pavelTsymbal.jpeg" height="100%" width="100%" />
                             </g>
                         </svg>
                         <a
                             className="social__link ml-2"
-                            href="https://www.linkedin.com/in/halfbottleofmind/"
+                            href="https://www.linkedin.com/in/pavel-tsymbal-63a101143/"
                             target="_blank"
                             rel="noreferrer"
                         >
@@ -55,18 +55,34 @@ function Testimonials(props: TestimonialsProps) {
                     <div className="swiper-slide review-item">
                         <svg className="avatar avatar--80" viewBox="0 0 84 84">
                             <g className="avatar__hexagon">
-                                <image xlinkHref="/images/sergeyLemeshev.jpeg" height="100%" width="100%" />
+                                <image xlinkHref="/images/vladislavPanfilov.jpeg" height="100%" width="100%" />
                             </g>
                         </svg>
                         <a
                             className="social__link ml-2"
-                            href=" https://www.linkedin.com/in/sergey-lemeshev-82256b76/"
+                            href="https://www.linkedin.com/in/halfbottleofmind/"
                             target="_blank"
                             rel="noreferrer"
                         >
                             <h4 className="d-flex align-items-center title title--h5">{t('secondReviewerName')}</h4>
                         </a>
                         <p className="review-item__caption">{t('secondReviewerText')}</p>
+                    </div>
+                    <div className="swiper-slide review-item">
+                        <svg className="avatar avatar--80" viewBox="0 0 84 84">
+                            <g className="avatar__hexagon">
+                                <image xlinkHref="/images/sergeyLemeshev.jpeg" height="100%" width="100%" />
+                            </g>
+                        </svg>
+                        <a
+                            className="social__link ml-2"
+                            href="https://www.linkedin.com/in/sergey-lemeshev-82256b76/"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <h4 className="d-flex align-items-center title title--h5">{t('thirdReviewerName')}</h4>
+                        </a>
+                        <p className="review-item__caption">{t('thirdReviewerText')}</p>
                     </div>
                 </div>
                 <div className="swiper-pagination" />

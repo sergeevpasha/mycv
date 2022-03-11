@@ -90,6 +90,12 @@ class Sidebar extends Component<NavigationProps, NavigationState> {
         }
     };
 
+    closeMenu = (): void => {
+        if (window.matchMedia('(max-width: 580px)').matches) {
+            this.toggleMenu();
+        }
+    };
+
     render() {
         const { t } = this.props;
         const { isActiveMenu, menu } = this.state;
@@ -111,16 +117,24 @@ class Sidebar extends Component<NavigationProps, NavigationState> {
                 <div ref={menu} className={`inner-menu js-tabs ${isActiveMenu ? 'is-active' : ''}`}>
                     <ul className="nav">
                         <li className="nav__item">
-                            <Link to="/">{t('about')}</Link>
+                            <Link to="/" onClick={this.closeMenu}>
+                                {t('about')}
+                            </Link>
                         </li>
                         <li className="nav__item">
-                            <Link to="/resume">{t('resume')}</Link>
+                            <Link to="/resume" onClick={this.closeMenu}>
+                                {t('resume')}
+                            </Link>
                         </li>
                         <li className="nav__item">
-                            <Link to="/projects">{t('projects')}</Link>
+                            <Link to="/projects" onClick={this.closeMenu}>
+                                {t('projects')}
+                            </Link>
                         </li>
                         <li className="nav__item">
-                            <Link to="/contact">{t('contact')}</Link>
+                            <Link to="/contact" onClick={this.closeMenu}>
+                                {t('contact')}
+                            </Link>
                         </li>
                     </ul>
                 </div>
