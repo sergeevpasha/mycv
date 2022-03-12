@@ -49,7 +49,7 @@ function Projects(props: ProjectsProps) {
                     <article className="timeline__item">
                         <h5 className="title title--h5 timeline__title">{t('secondProjectTitle')}</h5>
                         <span className="timeline__period">06/2018 — 08/2018</span>
-                        <p className="timeline__description">{t('firstProjectDescription')}</p>
+                        <p className="timeline__description">{t('secondProjectDescription')}</p>
                     </article>
                     <article className="timeline__item">
                         <h5 className="title title--h5 timeline__title">{t('firstProjectTitle')}</h5>
