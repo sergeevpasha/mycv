@@ -6,6 +6,7 @@ import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Script from 'next/script';
+import { Analytics } from '@vercel/analytics/react';
 import Layout from '../layouts/Main';
 import Sidebar from '../components/sidebar';
 import Navigation from '../components/navigation';
@@ -81,6 +82,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                             gtag('config', 'UA-222755399-1');
                         `}
                 </Script>
+                <Analytics />
             </div>
         </Layout>
     );

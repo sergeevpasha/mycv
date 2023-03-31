@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+    app:
+        container_name: mycv
+        image: node:18.15
+        hostname: mycv
+        volumes:
+            - ./:/var/www
+        working_dir: /var/www
+        environment:
+            HOST: 0.0.0.0
+        networks:
+            - default-network
+networks:
+    default-network:
+        name: "mycv-network"
+        driver: bridge
