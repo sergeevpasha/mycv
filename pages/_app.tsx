@@ -73,14 +73,31 @@ function MyApp({ Component, pageProps }: AppProps) {
                         <path d="M0 27.2891c0-4.6662 2.4889-8.976 6.52491-11.2986L31.308 1.72845c3.98-2.290382 8.8697-2.305446 12.8637-.03963l25.234 14.31558C73.4807 18.3162 76 22.6478 76 27.3426V56.684c0 4.6805-2.5041 9.0013-6.5597 11.3186L44.4317 82.2915c-3.9869 2.278-8.8765 2.278-12.8634 0L6.55974 68.0026C2.50414 65.6853 0 61.3645 0 56.684V27.2891z" />
                     </clipPath>
                 </svg>
-                <Script src="https://www.googletagmanager.com/gtag/js?id=UA-222755399-1" strategy="afterInteractive" />
+                <Script src="https://www.googletagmanager.com/gtag/js?id=G-TVT25F288C" strategy="afterInteractive" />
                 <Script id="google-analytics" strategy="afterInteractive">
                     {`
-                            window.dataLayer = window.dataLayer || [];
-                            function gtag(){dataLayer.push(arguments);}
-                            gtag('js', new Date());
-                            gtag('config', 'UA-222755399-1');
-                        `}
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('js', new Date());
+                        
+                        gtag('config', 'G-TVT25F288C');
+                    `}
+                </Script>
+                <Script id="yandex-counter" strategy="afterInteractive">
+                    {`
+                        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+                            m[i].l=1*new Date();
+                            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+                            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+                            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+                            
+                            ym(94010124, "init", {
+                            clickmap:true,
+                            trackLinks:true,
+                            accurateTrackBounce:true,
+                            webvisor:true
+                        });
+                    `}
                 </Script>
                 <Analytics />
             </div>
