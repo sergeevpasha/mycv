@@ -2,7 +2,7 @@ import '../assets/styles/style.scss';
 import '../assets/styles/style-dark.scss';
 import type { AppProps } from 'next/app';
 import { appWithTranslation, useTranslation } from 'next-i18next/pages';
-import React from 'react';
+import React, { Suspense } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { Analytics } from '@vercel/analytics/next';
@@ -86,15 +86,22 @@ function MyApp({ Component, pageProps }: AppProps) {
                     <meta property="profile:gender" content="male" />
                     <meta name="twitter:card" content="summary" />
                 </Head>
+                {/* Suspense boundaries let React hydrate these regions as separate tasks instead of one long one */}
                 <div className="row sticky-parent">
                     <aside className="col-12 col-md-12 col-xl-3">
-                        <Sidebar />
+                        <Suspense>
+                            <Sidebar />
+                        </Suspense>
                     </aside>
                     <div className="col-12 col-md-12 col-xl-9">
                         <div className="box shadow pb-0">
-                            <Navigation />
+                            <Suspense>
+                                <Navigation />
+                            </Suspense>
                             <div className="content">
-                                <Component {...pageProps} />
+                                <Suspense>
+                                    <Component {...pageProps} />
+                                </Suspense>
                             </div>
                         </div>
                         <footer className="footer" suppressHydrationWarning>

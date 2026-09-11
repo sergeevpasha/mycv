@@ -2,6 +2,7 @@ import React from 'react';
 import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
 import { WithTranslation, withTranslation } from 'next-i18next/pages';
 import { PageProps } from '../types';
+import LAYOUT_NAMESPACES from '../utils/namespaces';
 import ProgressBar from '../components/progressBar/index';
 import Education from '../components/resume/education';
 import Experience from '../components/resume/experience';
@@ -9,7 +10,7 @@ import Experience from '../components/resume/experience';
 export const getStaticProps = async ({ locale }: PageProps) => ({
     props: {
         locale,
-        ...(await serverSideTranslations(locale)),
+        ...(await serverSideTranslations(locale, [...LAYOUT_NAMESPACES, 'resumeProfile', 'education', 'experience'])),
     },
 });
 

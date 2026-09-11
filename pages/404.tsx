@@ -3,11 +3,12 @@ import Link from 'next/link';
 import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
 import { WithTranslation, withTranslation } from 'next-i18next/pages';
 import { PageProps } from '../types';
+import LAYOUT_NAMESPACES from '../utils/namespaces';
 
 export const getStaticProps = async ({ locale }: PageProps) => ({
     props: {
         locale,
-        ...(await serverSideTranslations(locale)),
+        ...(await serverSideTranslations(locale, [...LAYOUT_NAMESPACES])),
     },
 });
 

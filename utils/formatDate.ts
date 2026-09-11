@@ -1,21 +1,6 @@
-import { format, parseISO } from 'date-fns';
-import { ru, enUS, de } from 'date-fns/locale';
-
-const formatDate = (date: string, pageLocale: string): string => {
-    let locale = enUS;
-    switch (pageLocale) {
-        case 'ru':
-            locale = ru;
-            break;
-        case 'de':
-            locale = de;
-            break;
-        default:
-            break;
-    }
-    // parseISO reads a date-only string as local midnight; new Date() uses UTC, which is the previous
-    // day west of Greenwich and made the client render a different date than the server (hydration error)
-    return format(parseISO(date), 'PPP', { locale });
-};
+// Formats a YYYY-MM-DD date like "December 20, 1990" in the page locale. Both the date and the output
+// are pinned to UTC so the server and every visitor's timezone render the same day (no hydration mismatch)
+const formatDate = (date: string, pageLocale: string): string =>
+    new Intl.DateTimeFormat(pageLocale, { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(`${date}T00:00:00Z`));
 
 export default formatDate;

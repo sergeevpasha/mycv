@@ -101,3 +101,14 @@
 .swiper-pagination-custom, .swiper-pagination-fraction {
   bottom: 0;
 }
+
+// Swiper loads after hydration: size the slides like its config does (1 per view, 2 from 1200px) so nothing shifts
+.js-carousel-review:not(.swiper-initialized) .swiper-slide {
+  margin-right: 20px;
+  width: 100%;
+
+  @media only screen and (min-width: 1200px) {
+    margin-right: 30px;
+    width: calc((100% - 30px) / 2);
+  }
+}

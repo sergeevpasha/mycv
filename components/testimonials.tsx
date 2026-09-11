@@ -1,7 +1,6 @@
 import React, { createRef, useEffect } from 'react';
 import { WithTranslation, withTranslation } from 'next-i18next/pages';
-import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+import type Swiper from 'swiper';
 
 type TestimonialsProps = WithTranslation;
 
@@ -9,29 +8,35 @@ function Testimonials(props: TestimonialsProps) {
     const { t } = props;
     const carousel = createRef<HTMLDivElement>();
     useEffect(() => {
-        const swiper = new Swiper('.js-carousel-review', {
-            modules: [Navigation, Pagination],
-            slidesPerView: 1,
-            spaceBetween: 20,
-            speed: 300,
-            grabCursor: true,
-            watchOverflow: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            autoplay: {
-                delay: 5000,
-            },
-            breakpoints: {
-                1200: {
-                    slidesPerView: 2,
-                    spaceBetween: 30,
+        // Swiper is loaded after hydration to keep it off the critical path; CSS pre-sizes the slides
+        let swiper: Swiper | undefined;
+        let cancelled = false;
+        import('../utils/carousel').then(({ default: createCarousel }) => {
+            if (cancelled) return;
+            swiper = createCarousel('.js-carousel-review', {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                speed: 300,
+                grabCursor: true,
+                watchOverflow: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
                 },
-            },
+                autoplay: {
+                    delay: 5000,
+                },
+                breakpoints: {
+                    1200: {
+                        slidesPerView: 2,
+                        spaceBetween: 30,
+                    },
+                },
+            });
         });
         return () => {
-            swiper.destroy();
+            cancelled = true;
+            swiper?.destroy();
         };
     }, []);
     return (

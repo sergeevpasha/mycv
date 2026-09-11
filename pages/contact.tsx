@@ -3,11 +3,12 @@ import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslation
 import { withTranslation, WithTranslation } from 'next-i18next/pages';
 import emailjs from '@emailjs/browser';
 import { PageProps } from '../types';
+import LAYOUT_NAMESPACES from '../utils/namespaces';
 
 export const getStaticProps = async ({ locale }: PageProps) => ({
     props: {
         locale,
-        ...(await serverSideTranslations(locale)),
+        ...(await serverSideTranslations(locale, [...LAYOUT_NAMESPACES, 'contact'])),
     },
 });
 

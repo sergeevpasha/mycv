@@ -1,8 +1,7 @@
 import React, { createRef, useEffect } from 'react';
 import { WithTranslation, withTranslation } from 'next-i18next/pages';
 import Image from 'next/image';
-import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+import type Swiper from 'swiper';
 
 type ClientProps = WithTranslation;
 
@@ -10,33 +9,39 @@ function Clients(props: ClientProps) {
     const { t } = props;
     const carousel = createRef<HTMLDivElement>();
     useEffect(() => {
-        const swiper = new Swiper('.js-carousel-clients', {
-            modules: [Navigation, Pagination],
-            slidesPerView: 2,
-            spaceBetween: 20,
-            speed: 300,
-            grabCursor: true,
-            watchOverflow: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            autoplay: {
-                delay: 5000,
-            },
-            breakpoints: {
-                800: {
-                    slidesPerView: 3,
-                    spaceBetween: 30,
+        // Swiper is loaded after hydration to keep it off the critical path; CSS pre-sizes the slides
+        let swiper: Swiper | undefined;
+        let cancelled = false;
+        import('../utils/carousel').then(({ default: createCarousel }) => {
+            if (cancelled) return;
+            swiper = createCarousel('.js-carousel-clients', {
+                slidesPerView: 2,
+                spaceBetween: 20,
+                speed: 300,
+                grabCursor: true,
+                watchOverflow: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
                 },
-                1200: {
-                    slidesPerView: 4,
-                    spaceBetween: 30,
+                autoplay: {
+                    delay: 5000,
                 },
-            },
+                breakpoints: {
+                    800: {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                    },
+                    1200: {
+                        slidesPerView: 4,
+                        spaceBetween: 30,
+                    },
+                },
+            });
         });
         return () => {
-            swiper.destroy();
+            cancelled = true;
+            swiper?.destroy();
         };
     }, []);
     return (
