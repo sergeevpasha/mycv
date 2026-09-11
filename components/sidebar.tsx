@@ -98,15 +98,6 @@ class Sidebar extends Component<SidebarProps, { sticky: boolean }> {
                                 className="contacts-block__item"
                                 data-toggle="tooltip"
                                 data-placement="top"
-                                title={t('address')}
-                            >
-                                <i className="font-icon icon-location" />
-                                {t('location')}
-                            </li>
-                            <li
-                                className="contacts-block__item"
-                                data-toggle="tooltip"
-                                data-placement="top"
                                 title="E-mail"
                             >
                                 <a href="mailto:sergeevpasha90@gmail.com">

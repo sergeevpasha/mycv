@@ -733,10 +733,6 @@ $size-nav: mixins.rem(60px);
     - Other
 ----------------------------------------------------------------- */
 
-.mapboxgl-popup-content {
-  color: vars.$black-color;
-}
-
 // Bact to top
 .back-to-top {
   border-top: 1px solid vars.$white-color;

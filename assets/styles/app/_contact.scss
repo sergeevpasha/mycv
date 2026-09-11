@@ -1,12 +1,9 @@
 @use "../variables/media";
 @use "../variables/mixins";
-@use "../variables/vars";
 
 /* -----------------------------------------------------------------
     - Contact
 ----------------------------------------------------------------- */
-
-@use "sass:math";
 
 .contact-form {
   .btn {
@@ -22,41 +19,4 @@
 	  padding-bottom: mixins.rem(20px);
 	}
   }
-}
-
-// Map
-.map {
-  background-color: vars.$gray-100-color;
-  border-radius: #{math.div(vars.$border-rounded-20, 1.5)};
-  height: mixins.rem(380px);
-  margin-bottom: mixins.rem(32px);
-  position: relative;
-  direction: ltr;
-
-  @media only screen and (max-width: media.$small) {
-    height: mixins.rem(250px);
-  }
-}
-
-.popover-map {
-  &-title {
-    color: vars.$black-color;
-    font-size: mixins.rem(19px);
-	margin-top: mixins.rem(1px);
-	margin-bottom: mixins.rem(8px);
-  }
-
-  &-caption {
-    color: vars.$black-color;
-    font-weight: vars.$weight-400;
-  }
-}
-
-// Mapbox
-#marker {
-  background-image: url('../../images/icon-map-pic.svg');
-  background-size: cover;
-  width: mixins.rem(50px);
-  height: mixins.rem(50px);
-  cursor: pointer;
 }

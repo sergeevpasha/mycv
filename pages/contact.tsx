@@ -3,7 +3,6 @@ import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslation
 import { withTranslation, WithTranslation } from 'next-i18next/pages';
 import emailjs from '@emailjs/browser';
 import { PageProps } from '../types';
-import SimpleMap from '../components/map';
 
 export const getStaticProps = async ({ locale }: PageProps) => ({
     props: {
@@ -44,7 +43,6 @@ function Contact(props: ContactProps) {
             <div className="pb-2">
                 <h1 className="title title--h1 first-title title__separate">{t('contact')}</h1>
             </div>
-            <SimpleMap />
             <h2 className="title title--h3">{t('contactForm')}</h2>
             <form id="contact-form" ref={form} className="contact-form" onSubmit={sendEmail}>
                 <div className="row">
