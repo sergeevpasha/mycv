@@ -12,10 +12,8 @@ $version: "1.1.0";
  - General Styles
  - Background
  - Typography
- - Preloader
  - Form
  - Button
- - Preloader
  - Sidebar
  - Sections
  - Navbar
@@ -23,12 +21,8 @@ $version: "1.1.0";
  - Cases
  - Clients
  - Contact
- - Single post
  - Footer
  - Contact
- - Portfolio
- - News
- - Single news
  - Testimonials
  - Timeline
  - Other
@@ -38,7 +32,6 @@ $version: "1.1.0";
 // Vendor
 @import 'vendors/bootstrap.min.css';
 @import 'vendors/swiper.min.css';
-@import 'vendors/simplebar.min.css';
 
 // Font Icons
 @import '../icons/style.css';
@@ -56,7 +49,6 @@ $version: "1.1.0";
 // Components
 @import 'app/form';
 @import 'app/button';
-@import 'app/preloader';
 @import 'app/sidebar';
 @import 'app/sections';
 @import 'app/navbar';
@@ -66,9 +58,6 @@ $version: "1.1.0";
 @import 'app/cases';
 @import 'app/clients';
 @import 'app/contact';
-@import 'app/portfolio';
-@import 'app/news';
-@import 'app/single-news';
 @import 'app/testimonials';
 @import 'app/timeline';
 
