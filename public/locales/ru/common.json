@@ -1,3 +1,14 @@
 {
-  "me": "test"
+  "title": "Павел Сергеев",
+  "description": "Павел Сергеев, full-stack инженер-программист: PHP/Laravel, Go, Vue/React, PostgreSQL и интеграция AI. Резюме, проекты и контакты.",
+  "applicationName": "Павел Сергеев — резюме",
+  "firstName": "Павел",
+  "lastName": "Сергеев",
+  "userName": "Paul",
+  "cookieTitle": "Согласие на cookie",
+  "cookieText": "Этот сайт использует Google Analytics и Яндекс Метрику (включая запись сессий), чтобы понимать, как посетители им пользуются. Они работают, только если вы согласитесь.",
+  "cookieAccept": "Принять",
+  "cookieDecline": "Отклонить",
+  "cookieSettings": "Настройки cookie",
+  "language": "Язык"
 }

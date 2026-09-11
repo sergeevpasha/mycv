@@ -1,3 +1,9 @@
 {
-  "jobTitle": "Software Engineer"
+  "jobTitle": "Software Engineer",
+  "firstName": "Pavel",
+  "lastName": "Sergeev",
+  "location": "Bangkok, Thailand",
+  "birthday": "Geburtstag",
+  "address": "Adresse",
+  "downloadCV": "CV herunterladen (EN)"
 }

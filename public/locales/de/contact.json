@@ -1,0 +1,10 @@
+{
+  "contact": "Kontakt",
+  "contactForm": "Kontaktformular",
+  "fullName": "Vollständiger Name",
+  "emailAddress": "E-Mail-Adresse",
+  "yourMessage": "Ihre Nachricht",
+  "sendMessage": "Nachricht senden",
+  "messageSent": "Danke! Ihre Nachricht wurde gesendet.",
+  "messageFailed": "Die Nachricht konnte leider nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie mir direkt eine E-Mail."
+}

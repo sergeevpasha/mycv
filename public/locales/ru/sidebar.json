@@ -1,5 +1,9 @@
 {
-  "jobTitle": "Веб разработчик",
+  "jobTitle": "Инженер-программист",
   "firstName": "Павел",
-  "lastName": "Сергеев"
+  "lastName": "Сергеев",
+  "location": "Бангкок, Таиланд",
+  "birthday": "День рождения",
+  "address": "Адрес",
+  "downloadCV": "Скачать CV (EN)"
 }

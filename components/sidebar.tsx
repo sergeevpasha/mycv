@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Sticky from 'react-stickynode';
 import { WithTranslation, withTranslation } from 'next-i18next/pages';
 import formatDate from '../utils/formatDate';
+import LanguageSwitcher from './languageSwitcher';
 
 type SidebarProps = WithTranslation;
 
@@ -79,6 +80,7 @@ class Sidebar extends Component<SidebarProps, { sticky: boolean }> {
                                 <i className="font-icon icon-github" />
                             </a>
                         </div>
+                        <LanguageSwitcher />
                     </div>
 
                     <div className="sidebar__info box-inner box-inner--rounded">

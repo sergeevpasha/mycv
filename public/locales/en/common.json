@@ -9,5 +9,6 @@
   "cookieText": "This site uses Google Analytics and Yandex Metrica (including session recordings) to understand how visitors use it. They only run if you accept.",
   "cookieAccept": "Accept",
   "cookieDecline": "Decline",
-  "cookieSettings": "Cookie settings"
+  "cookieSettings": "Cookie settings",
+  "language": "Language"
 }

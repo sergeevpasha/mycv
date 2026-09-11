@@ -1,3 +1,14 @@
 {
-  "me": "test"
+  "title": "Pavel Sergeev",
+  "description": "Pavel Sergeev, Full-Stack-Softwareentwickler: PHP/Laravel, Go, Vue/React, PostgreSQL und KI-Integration. Lebenslauf, Projekte und Kontakt.",
+  "applicationName": "Pavel Sergeev – Lebenslauf",
+  "firstName": "Pavel",
+  "lastName": "Sergeev",
+  "userName": "Paul",
+  "cookieTitle": "Cookie-Einwilligung",
+  "cookieText": "Diese Website nutzt Google Analytics und Yandex Metrica (einschließlich Sitzungsaufzeichnungen), um zu verstehen, wie Besucher sie nutzen. Beide laufen nur, wenn Sie zustimmen.",
+  "cookieAccept": "Akzeptieren",
+  "cookieDecline": "Ablehnen",
+  "cookieSettings": "Cookie-Einstellungen",
+  "language": "Sprache"
 }

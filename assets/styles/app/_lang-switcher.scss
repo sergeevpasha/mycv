@@ -1,0 +1,36 @@
+@use "../variables/mixins";
+@use "../variables/vars";
+
+/* -----------------------------------------------------------------
+    - Language switcher
+----------------------------------------------------------------- */
+
+.lang-switcher {
+  display: flex;
+  gap: mixins.rem(8px);
+  justify-content: center;
+  margin-top: mixins.rem(16px);
+
+  &__link {
+    border: 1px solid rgba(vars.$white-color, .15);
+    border-radius: vars.$border-rounded-20;
+    color: vars.$gray-body;
+    font-size: mixins.rem(12px);
+    letter-spacing: .05em;
+    padding: mixins.rem(3px) mixins.rem(12px);
+    text-decoration: none;
+    transition: .3s ease-in-out;
+
+    &:hover {
+      border-color: rgba(vars.$white-color, .4);
+      color: vars.$white-color;
+      text-decoration: none;
+    }
+
+    &.is-active {
+      background-color: vars.$dark-tone-color;
+      border-color: vars.$dark-tone-color;
+      color: vars.$white-color;
+    }
+  }
+}

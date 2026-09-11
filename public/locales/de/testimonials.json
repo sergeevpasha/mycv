@@ -1,0 +1,9 @@
+{
+  "testimonials": "Referenzen",
+  "firstReviewerName": "Pavel Tsymbal",
+  "firstReviewerText": "Ich habe mit Pavel am selben Laravel/Vue-Projekt gearbeitet. Sein Wissen über diese Technologien hat unsere Entwicklung auf ein ganz neues Tempo gebracht.",
+  "secondReviewerName": "Vladislav Panfilov",
+  "secondReviewerText": "Mit Pavel lässt es sich sehr gut zusammenarbeiten: Er hält auch enge Deadlines ein und bringt sich in Teamentscheidungen ein.",
+  "thirdReviewerName": "Sergey Lemeshev",
+  "thirdReviewerText": "Ein großartiger PHP-Entwickler: gute Kenntnisse der GoF-Patterns, SOLID und GRASP, erfahren mit Docker."
+}
