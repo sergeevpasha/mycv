@@ -1,14 +1,14 @@
 {
   "title": "About Me",
-  "firstParagraph": "I'm a Software Engineer, working in web development as a backend and frontend developer. Passionate about doing a good job, learning new frameworks and technologies",
-  "secondParagraph": "My job is to build complex web applications, so I am experienced in a complete cycle of development, starting from POC (Proof of Concepts), converting PSD/Sketch (you name it) to HTML, building UML diagrams and migrations for DB, creating backend and frontend communicating by RESTfull API, Websockets, SSE. Ending with deploying and scaling with CI/CD on AWS, and splitting required pieces of code to Lambda functions.",
+  "firstParagraph": "I'm a full-stack software engineer with 8+ years of building SaaS products in property-tech, health-tech, fintech and e-commerce. I own systems end-to-end: architecture, backend, frontend, infrastructure-as-code and the AI layer on top.",
+  "secondParagraph": "Teams bring me the hard problems: high-load data pipelines on ClickHouse, low-latency request handling with Nginx and Lua, complex third-party integrations (Airbnb, VRBO, Google, payment providers) and LLM features that actually reach users, such as RAG assistants, real-time translation and ChatGPT-driven automation. My core stack is PHP/Laravel and Go on the server, Vue and React on the client, PostgreSQL underneath and AWS around it.",
   "skills": "What I'm Doing",
-  "backendDevTitle": "PHP / Laravel Development",
-  "backendDevBody": "Building API, Serverless functions and sometimes Monoliths.",
-  "frontendDevTitle": "JS / Vue / React Development",
-  "frontendDevBody": "High-quality development of interactive sites at the professional level.",
-  "htmlDevTitle": "HTML/CSS Markup",
-  "htmlDevBody": "Professional page layouts using SCSS/SASS with responsive design.",
-  "databaseArchitectureTitle": "Database Architecture",
-  "databaseArchitectureBody": "I make UML Diagrams, writing SQL Queries, Views and generated columns."
+  "backendDevTitle": "Backend Development",
+  "backendDevBody": "PHP / Laravel, Go and Node.js services: APIs, third-party integrations and background jobs, shipped with Docker and CI/CD on AWS.",
+  "frontendDevTitle": "Frontend Development",
+  "frontendDevBody": "Interactive Vue / Nuxt and React / Next.js applications with a responsive, maintainable UI.",
+  "aiIntegrationTitle": "AI Integration",
+  "aiIntegrationBody": "LLM-powered features: RAG assistants over large knowledge bases, automated replies, real-time translation and agents with tool calling.",
+  "databaseArchitectureTitle": "Data & High Load",
+  "databaseArchitectureBody": "PostgreSQL, MySQL and ClickHouse: schema design, SQL optimization and real-time analytics for high-traffic systems."
 }

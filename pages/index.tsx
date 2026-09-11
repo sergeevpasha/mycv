@@ -68,8 +68,8 @@ function Home(props: HomeProps) {
                                 height={40}
                             />
                             <div>
-                                <h3 className="title title--h5">{t('htmlDevTitle')}</h3>
-                                <p className="case-item__caption">{t('htmlDevBody')}</p>
+                                <h3 className="title title--h5">{t('aiIntegrationTitle')}</h3>
+                                <p className="case-item__caption">{t('aiIntegrationBody')}</p>
                             </div>
                         </div>
                     </div>
