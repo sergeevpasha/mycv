@@ -14,12 +14,12 @@ function Education(props: EducationProps) {
             </h2>
             <div className="timeline">
                 <article className="timeline__item">
-                    <h5 className="title title--h5 timeline__title">{t('secondEducationTitle')}</h5>
+                    <h3 className="title title--h5 timeline__title">{t('secondEducationTitle')}</h3>
                     <span className="timeline__period">09/2016 — 09/2017</span>
                     <p className="timeline__description">{t('secondEducationDescription')}</p>
                 </article>
                 <article className="timeline__item">
-                    <h5 className="title title--h5 timeline__title">{t('firstEducationTitle')}</h5>
+                    <h3 className="title title--h5 timeline__title">{t('firstEducationTitle')}</h3>
                     <span className="timeline__period">09/2008 — 06/2013</span>
                     <p className="timeline__description">{t('firstEducationDescription')}</p>
                 </article>

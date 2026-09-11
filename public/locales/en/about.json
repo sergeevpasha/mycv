@@ -1,6 +1,6 @@
 {
   "title": "About Me",
-  "firstParagraph": "I'm a full-stack software engineer with 8+ years of building SaaS products in property-tech, health-tech, fintech and e-commerce. I own systems end-to-end: architecture, backend, frontend, infrastructure-as-code and the AI layer on top.",
+  "firstParagraph": "I'm Pavel Sergeev, a full-stack software engineer with 8+ years of building SaaS products in property-tech, health-tech, fintech and e-commerce. I own systems end-to-end: architecture, backend, frontend, infrastructure-as-code and the AI layer on top.",
   "secondParagraph": "Teams bring me the hard problems: high-load data pipelines on ClickHouse, low-latency request handling with Nginx and Lua, complex third-party integrations (Airbnb, VRBO, Google, payment providers) and LLM features that actually reach users, such as RAG assistants, real-time translation and ChatGPT-driven automation. My core stack is PHP/Laravel and Go on the server, Vue and React on the client, PostgreSQL underneath and AWS around it.",
   "skills": "What I'm Doing",
   "backendDevTitle": "Backend Development",

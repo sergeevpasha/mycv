@@ -14,22 +14,22 @@ function Experience(props: EducationProps) {
             </h2>
             <div className="timeline">
                 <article className="timeline__item">
-                    <h5 className="title title--h5 timeline__title">{t('fourthExperienceTitle')}</h5>
+                    <h3 className="title title--h5 timeline__title">{t('fourthExperienceTitle')}</h3>
                     <span className="timeline__period">05/2023 — {t('present')}</span>
                     <p className="timeline__description">{t('fourthExperienceDescription')}</p>
                 </article>
                 <article className="timeline__item">
-                    <h5 className="title title--h5 timeline__title">{t('thirdExperienceTitle')}</h5>
+                    <h3 className="title title--h5 timeline__title">{t('thirdExperienceTitle')}</h3>
                     <span className="timeline__period">08/2020 — 09/2022</span>
                     <p className="timeline__description">{t('thirdExperienceDescription')}</p>
                 </article>
                 <article className="timeline__item">
-                    <h5 className="title title--h5 timeline__title">{t('secondExperienceTitle')}</h5>
+                    <h3 className="title title--h5 timeline__title">{t('secondExperienceTitle')}</h3>
                     <span className="timeline__period">01/2018 — 08/2020</span>
                     <p className="timeline__description">{t('secondExperienceDescription')}</p>
                 </article>
                 <article className="timeline__item">
-                    <h5 className="title title--h5 timeline__title">{t('firstExperienceTitle')}</h5>
+                    <h3 className="title title--h5 timeline__title">{t('firstExperienceTitle')}</h3>
                     <span className="timeline__period">08/2014 — 08/2016</span>
                     <p className="timeline__description">{t('firstExperienceDescription')}</p>
                 </article>

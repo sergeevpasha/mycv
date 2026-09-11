@@ -10,7 +10,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "fix": "npm run lint -- --fix"
+    "fix": "npm run lint -- --fix",
+    "sitemap": "node scripts/sitemap.mjs"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",

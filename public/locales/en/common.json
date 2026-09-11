@@ -1,6 +1,4 @@
 {
-  "title": "Pavel Sergeev",
-  "description": "Pavel Sergeev, full-stack software engineer: PHP/Laravel, Go, Vue/React, PostgreSQL and AI integration. Resume, projects and contacts.",
   "applicationName": "Pavel Sergeev CV",
   "firstName": "Pavel",
   "lastName": "Sergeev",
@@ -10,5 +8,8 @@
   "cookieAccept": "Accept",
   "cookieDecline": "Decline",
   "cookieSettings": "Cookie settings",
-  "language": "Language"
+  "language": "Language",
+  "notFoundHeading": "Page not found",
+  "notFoundText": "The page you're looking for doesn't exist or has moved.",
+  "notFoundLink": "Back to the home page"
 }

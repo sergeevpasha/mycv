@@ -1,6 +1,4 @@
 {
-  "title": "Павел Сергеев",
-  "description": "Павел Сергеев, full-stack инженер-программист: PHP/Laravel, Go, Vue/React, PostgreSQL и интеграция AI. Резюме, проекты и контакты.",
   "applicationName": "Павел Сергеев — резюме",
   "firstName": "Павел",
   "lastName": "Сергеев",
@@ -10,5 +8,8 @@
   "cookieAccept": "Принять",
   "cookieDecline": "Отклонить",
   "cookieSettings": "Настройки cookie",
-  "language": "Язык"
+  "language": "Язык",
+  "notFoundHeading": "Страница не найдена",
+  "notFoundText": "Такой страницы нет или она была перемещена.",
+  "notFoundLink": "На главную"
 }

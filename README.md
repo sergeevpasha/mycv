@@ -37,4 +37,5 @@ npm run build    # Build for production
 npm run start    # Serve the production build
 npm run lint     # Run ESLint (check only)
 npm run fix      # Run ESLint (fix issues)
+npm run sitemap  # Regenerate public/sitemap.xml after content changes
 ```

@@ -44,40 +44,48 @@ class Sidebar extends Component<SidebarProps, { sticky: boolean }> {
         return (
             <Sticky enabled={sticky} top={0} onStateChange={this.changeSticky}>
                 <div className="sidebar box shadow pb-0 sticky-column">
-                    <svg className="avatar avatar--180" viewBox="0 0 188 188">
+                    <svg
+                        className="avatar avatar--180"
+                        viewBox="0 0 188 188"
+                        role="img"
+                        aria-label={`${t('firstName')} ${t('lastName')}`}
+                    >
                         <g className="avatar__box">
                             <image xlinkHref="/images/me.jpeg" height="100%" width="100%" />
                         </g>
                     </svg>
                     <div className="text-center">
-                        <h3 className="title title--h3 sidebar__user-name">
+                        <p className="title title--h3 sidebar__user-name">
                             <span className="weight--500">{t('lastName')}</span> {t('firstName')}
-                        </h3>
+                        </p>
                         <div className="badge badge--light">{t('jobTitle')}</div>
                         <div className="social">
                             <a
                                 className="social__link"
                                 href="https://www.instagram.com/sergeev_pasha"
+                                aria-label="Instagram"
                                 target="_blank"
                                 rel="noreferrer"
                             >
-                                <i className="font-icon icon-instagram" />
+                                <i className="font-icon icon-instagram" aria-hidden="true" />
                             </a>
                             <a
                                 className="social__link"
                                 href="https://www.linkedin.com/in/pavel-sergeev-35742a162"
+                                aria-label="LinkedIn"
                                 target="_blank"
                                 rel="noreferrer"
                             >
-                                <i className="font-icon icon-linkedin2" />
+                                <i className="font-icon icon-linkedin2" aria-hidden="true" />
                             </a>
                             <a
                                 className="social__link"
                                 href="https://github.com/sergeevpasha"
+                                aria-label="GitHub"
                                 target="_blank"
                                 rel="noreferrer"
                             >
-                                <i className="font-icon icon-github" />
+                                <i className="font-icon icon-github" aria-hidden="true" />
                             </a>
                         </div>
                         <LanguageSwitcher />

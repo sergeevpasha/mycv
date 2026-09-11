@@ -15,7 +15,7 @@
 
 .progress {
   position: relative;
-  background-color: #0D86FF;
+  background-color: #0B75DE;
   border-radius: 1rem;
   -webkit-animation: progressBar .5s ease-in-out;
   -webkit-animation-fill-mode:both;
@@ -24,6 +24,7 @@
 }
 
 .progressText {
+  color: #fff;
   position: absolute;
   display: flex;
   align-items: center;

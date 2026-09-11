@@ -11,42 +11,69 @@ import Sidebar from '../components/sidebar';
 import Navigation from '../components/navigation';
 import CookieConsent, { openCookieSettings } from '../components/cookieConsent';
 import pageUrl, { OG_LOCALES, SITE_URL } from '../utils/site';
+import profileJsonLd from '../utils/structuredData';
+
+// Pages that get their own title/description and are indexed; anything else (404) is noindex
+const SEO_PAGES: Record<string, string> = {
+    '/': 'home',
+    '/resume': 'resume',
+    '/projects': 'projects',
+    '/contact': 'contact',
+};
 
 function MyApp({ Component, pageProps }: AppProps) {
     const { t } = useTranslation('common');
+    const { t: tSeo } = useTranslation('seo');
     const { locale = 'en', defaultLocale = 'en', locales = [], pathname } = useRouter();
+    const page = SEO_PAGES[pathname];
     const url = pageUrl(locale, defaultLocale, pathname);
+    const title = tSeo(`${page ?? 'notFound'}Title`);
+    const description = tSeo(`${page ?? 'notFound'}Description`);
 
     return (
         <Layout>
             <div className="container gutter-top">
                 <Head>
-                    <title>{t('title')}</title>
-                    <meta name="description" content={t('description')} />
+                    <title>{title}</title>
+                    <meta name="description" content={description} />
                     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
                     <meta name="author" content={`${t('firstName')} ${t('lastName')}`} />
                     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
                     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
                     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
                     <link rel="manifest" href="/site.webmanifest" />
-                    <meta name="robots" content="index, follow" />
-                    <link rel="canonical" href={url} />
-                    {locales.map(alternate => (
+                    <link rel="preload" as="image" href="/images/me.jpeg" fetchPriority="high" />
+                    <meta name="robots" content={page ? 'index, follow' : 'noindex, follow'} />
+                    {page && <link rel="canonical" href={url} />}
+                    {page &&
+                        locales.map(alternate => (
+                            <link
+                                key={alternate}
+                                rel="alternate"
+                                hrefLang={alternate}
+                                href={pageUrl(alternate, defaultLocale, pathname)}
+                            />
+                        ))}
+                    {page && (
                         <link
-                            key={alternate}
                             rel="alternate"
-                            hrefLang={alternate}
-                            href={pageUrl(alternate, defaultLocale, pathname)}
+                            hrefLang="x-default"
+                            href={pageUrl(defaultLocale, defaultLocale, pathname)}
                         />
-                    ))}
-                    <link rel="alternate" hrefLang="x-default" href={pageUrl(defaultLocale, defaultLocale, pathname)} />
+                    )}
+                    {page === 'home' && (
+                        <script
+                            type="application/ld+json"
+                            dangerouslySetInnerHTML={{ __html: profileJsonLd(url, title, locale) }}
+                        />
+                    )}
                     <meta name="apple-mobile-web-app-title" content={t('applicationName')} />
                     <meta name="application-name" content={t('applicationName')} />
                     <meta name="msapplication-TileColor" content="#2d89ef" />
                     <meta name="theme-color" content="#ffffff" />
-                    <meta property="og:title" content={t('title')} />
-                    <meta property="og:description" content={t('description')} />
-                    <meta property="og:url" content={url} />
+                    <meta property="og:title" content={title} />
+                    <meta property="og:description" content={description} />
+                    {page && <meta property="og:url" content={url} />}
                     <meta property="og:image" content={`${SITE_URL}/images/me.jpeg`} />
                     <meta property="og:image:width" content="400" />
                     <meta property="og:image:height" content="400" />
@@ -57,6 +84,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                     <meta property="profile:last_name" content={t('lastName')} />
                     <meta property="profile:username" content={t('userName')} />
                     <meta property="profile:gender" content="male" />
+                    <meta name="twitter:card" content="summary" />
                 </Head>
                 <div className="row sticky-parent">
                     <aside className="col-12 col-md-12 col-xl-3">

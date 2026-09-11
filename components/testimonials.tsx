@@ -51,7 +51,7 @@ function Testimonials(props: TestimonialsProps) {
                             target="_blank"
                             rel="noreferrer"
                         >
-                            <h4 className="d-flex align-items-center title title--h5">{t('firstReviewerName')}</h4>
+                            <h3 className="d-flex align-items-center title title--h5">{t('firstReviewerName')}</h3>
                         </a>
                         <p className="review-item__caption">{t('firstReviewerText')}</p>
                     </div>
@@ -67,7 +67,7 @@ function Testimonials(props: TestimonialsProps) {
                             target="_blank"
                             rel="noreferrer"
                         >
-                            <h4 className="d-flex align-items-center title title--h5">{t('secondReviewerName')}</h4>
+                            <h3 className="d-flex align-items-center title title--h5">{t('secondReviewerName')}</h3>
                         </a>
                         <p className="review-item__caption">{t('secondReviewerText')}</p>
                     </div>
@@ -83,7 +83,7 @@ function Testimonials(props: TestimonialsProps) {
                             target="_blank"
                             rel="noreferrer"
                         >
-                            <h4 className="d-flex align-items-center title title--h5">{t('thirdReviewerName')}</h4>
+                            <h3 className="d-flex align-items-center title title--h5">{t('thirdReviewerName')}</h3>
                         </a>
                         <p className="review-item__caption">{t('thirdReviewerText')}</p>
                     </div>
