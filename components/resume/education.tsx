@@ -1,5 +1,5 @@
 import React from 'react';
-import { WithTranslation, withTranslation } from 'next-i18next';
+import { WithTranslation, withTranslation } from 'next-i18next/pages';
 
 type EducationProps = WithTranslation;
 

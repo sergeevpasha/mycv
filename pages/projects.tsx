@@ -1,6 +1,6 @@
 import React from 'react';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { WithTranslation, withTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
+import { WithTranslation, withTranslation } from 'next-i18next/pages';
 import { PageProps } from '../types';
 
 export const getStaticProps = async ({ locale }: PageProps) => ({

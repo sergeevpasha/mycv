@@ -1,6 +1,7 @@
 import React, { createRef, useEffect } from 'react';
-import { WithTranslation, withTranslation } from 'next-i18next';
-import Swiper, { Navigation, Pagination } from 'swiper';
+import { WithTranslation, withTranslation } from 'next-i18next/pages';
+import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
 
 type ClientProps = WithTranslation;
 
@@ -8,33 +9,35 @@ function Clients(props: ClientProps) {
     const { t } = props;
     const carousel = createRef<HTMLDivElement>();
     useEffect(() => {
-        Swiper.use([Navigation, Pagination]);
-        (() =>
-            new Swiper('.js-carousel-clients', {
-                slidesPerView: 2,
-                spaceBetween: 20,
-                speed: 300,
-                grabCursor: true,
-                watchOverflow: true,
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
+        const swiper = new Swiper('.js-carousel-clients', {
+            modules: [Navigation, Pagination],
+            slidesPerView: 2,
+            spaceBetween: 20,
+            speed: 300,
+            grabCursor: true,
+            watchOverflow: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            autoplay: {
+                delay: 5000,
+            },
+            breakpoints: {
+                800: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
                 },
-                autoplay: {
-                    delay: 5000,
+                1200: {
+                    slidesPerView: 4,
+                    spaceBetween: 30,
                 },
-                breakpoints: {
-                    800: {
-                        slidesPerView: 3,
-                        spaceBetween: 30,
-                    },
-                    1200: {
-                        slidesPerView: 4,
-                        spaceBetween: 30,
-                    },
-                },
-            }))();
-    });
+            },
+        });
+        return () => {
+            swiper.destroy();
+        };
+    }, []);
     return (
         <div className="box-inner box-inner--rounded">
             <h2 className="title title--h3">{t('clients')}</h2>

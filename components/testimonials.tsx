@@ -1,6 +1,7 @@
 import React, { createRef, useEffect } from 'react';
-import { WithTranslation, withTranslation } from 'next-i18next';
-import Swiper, { Navigation, Pagination } from 'swiper';
+import { WithTranslation, withTranslation } from 'next-i18next/pages';
+import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
 
 type TestimonialsProps = WithTranslation;
 
@@ -8,29 +9,31 @@ function Testimonials(props: TestimonialsProps) {
     const { t } = props;
     const carousel = createRef<HTMLDivElement>();
     useEffect(() => {
-        Swiper.use([Navigation, Pagination]);
-        (() =>
-            new Swiper('.js-carousel-review', {
-                slidesPerView: 1,
-                spaceBetween: 20,
-                speed: 300,
-                grabCursor: true,
-                watchOverflow: true,
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
+        const swiper = new Swiper('.js-carousel-review', {
+            modules: [Navigation, Pagination],
+            slidesPerView: 1,
+            spaceBetween: 20,
+            speed: 300,
+            grabCursor: true,
+            watchOverflow: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            autoplay: {
+                delay: 5000,
+            },
+            breakpoints: {
+                1200: {
+                    slidesPerView: 2,
+                    spaceBetween: 30,
                 },
-                autoplay: {
-                    delay: 5000,
-                },
-                breakpoints: {
-                    1200: {
-                        slidesPerView: 2,
-                        spaceBetween: 30,
-                    },
-                },
-            }))();
-    });
+            },
+        });
+        return () => {
+            swiper.destroy();
+        };
+    }, []);
     return (
         <div className="box-inner box-inner--white">
             <h2 className="title title--h3">{t('testimonials')}</h2>

@@ -1,14 +1,14 @@
 import React, { Component, createRef, RefObject } from 'react';
-import { WithTranslation, withTranslation } from 'next-i18next';
-import anime from 'animejs';
+import { WithTranslation, withTranslation } from 'next-i18next/pages';
+import { createTimeline, stagger, Timeline } from 'animejs';
 import Link from './link';
 
 type NavigationProps = WithTranslation;
 
 type NavigationState = {
     isActiveMenu: boolean;
-    menu: RefObject<HTMLDivElement>;
-    nav: any | null;
+    menu: RefObject<HTMLDivElement | null>;
+    nav: Timeline | null;
 };
 
 class Sidebar extends Component<NavigationProps, NavigationState> {
@@ -26,45 +26,44 @@ class Sidebar extends Component<NavigationProps, NavigationState> {
     }
 
     animate = () => {
-        const nav = anime.timeline({ autoplay: false });
+        const nav = createTimeline({ autoplay: false });
         const { menu } = this.state;
         if (menu.current) {
             if (window.matchMedia('(max-width: 580px)').matches) {
-                nav.add({
-                    targets: menu.current.children,
+                nav.add(menu.current.children, {
                     duration: 1000,
                     width: ['0', '100%'],
                     opacity: [0, 1],
-                    easing: 'easeInOutBack',
+                    ease: 'inOutBack',
                 }).add(
+                    menu.current.children[0].children,
                     {
-                        targets: menu.current.children[0].children,
                         duration: 200,
-                        delay: anime.stagger(50),
+                        delay: stagger(50),
                         opacity: [0, 1],
                         translateX: [70, 0],
-                        easing: 'easeInOutBack',
+                        ease: 'inOutBack',
                     },
                     '-=500'
                 );
             } else {
-                nav.add({
-                    targets: menu.current.children,
+                nav.add(menu.current.children, {
                     duration: 1000,
                     width: ['0', '100%'],
-                    easing: 'easeInOutBack',
+                    ease: 'inOutBack',
                 }).add(
+                    menu.current.children[0].children,
                     {
-                        targets: menu.current.children[0].children,
                         duration: 200,
-                        delay: anime.stagger(50),
+                        delay: stagger(50),
                         opacity: [0, 1],
                         translateX: [70, 0],
-                        easing: 'easeInOutBack',
+                        ease: 'inOutBack',
                     },
                     '-=500'
                 );
             }
+            nav.init();
         }
 
         this.setState({
@@ -81,12 +80,10 @@ class Sidebar extends Component<NavigationProps, NavigationState> {
             isActiveMenu: !isActiveMenu,
         });
 
-        if (nav.began) {
-            nav.reverse();
-            nav.completed = false;
-        }
-        if (nav.paused) {
-            nav.play();
+        if (isActiveMenu) {
+            nav?.reverse();
+        } else {
+            nav?.play();
         }
     };
 

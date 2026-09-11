@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Sticky from 'react-stickynode';
-import { WithTranslation, withTranslation } from 'next-i18next';
+import { WithTranslation, withTranslation } from 'next-i18next/pages';
 import formatDate from '../utils/formatDate';
 
 type SidebarProps = WithTranslation;

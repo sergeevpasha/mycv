@@ -6,13 +6,11 @@ interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
     to: string;
 }
 
-export default React.forwardRef(({ to, ...props }: LinkProps, ref: any) => {
+export default React.forwardRef(function NavLink({ to, ...props }: LinkProps, ref: any) {
     const router = useRouter();
     return (
-        <Link href={to}>
-            <a {...props} ref={ref} className={router.pathname === to ? 'active' : ''}>
-                {props.children}
-            </a>
+        <Link {...props} href={to} ref={ref} className={router.pathname === to ? 'active' : ''}>
+            {props.children}
         </Link>
     );
 });

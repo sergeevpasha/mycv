@@ -1,12 +1,12 @@
 import '../assets/styles/style.scss';
 import '../assets/styles/style-dark.scss';
 import type { AppProps } from 'next/app';
-import { appWithTranslation, useTranslation } from 'next-i18next';
-import React, { useEffect, useState } from 'react';
+import { appWithTranslation, useTranslation } from 'next-i18next/pages';
+import React, { useSyncExternalStore } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Script from 'next/script';
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from '@vercel/analytics/next';
 import Layout from '../layouts/Main';
 import Sidebar from '../components/sidebar';
 import Navigation from '../components/navigation';
@@ -14,14 +14,13 @@ import Navigation from '../components/navigation';
 function MyApp({ Component, pageProps }: AppProps) {
     const { t } = useTranslation('common');
     const router = useRouter();
-    const [ogUrl, setOgUrl] = useState('');
-
-    useEffect(() => {
-        const { host } = window.location;
-        const baseUrl = `https://${host}`;
-        const localePath = baseUrl + router.pathname + (router.locale === 'en' ? '' : router.locale);
-        setOgUrl(localePath.replace(/\/$/, ''));
-    }, [router.pathname, router.locale]);
+    const host = useSyncExternalStore(
+        () => () => {},
+        () => window.location.host,
+        () => ''
+    );
+    const localePath = `https://${host}${router.pathname}${router.locale === 'en' ? '' : router.locale}`;
+    const ogUrl = host ? localePath.replace(/\/$/, '') : '';
 
     return (
         <Layout>

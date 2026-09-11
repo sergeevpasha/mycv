@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { withTranslation, WithTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
+import { withTranslation, WithTranslation } from 'next-i18next/pages';
 import emailjs from '@emailjs/browser';
 import { PageProps } from '../types';
 import SimpleMap from '../components/map';
