@@ -1,4 +1,8 @@
+@use "vars";
+
 // Flexbox
+@use "sass:math";
+
 @mixin flex-variant($display, $direction: false, $align: false, $justify: false, $wrap: false) {
   display: $display;
 
@@ -33,14 +37,14 @@
 }
 
 // px to rem
-@function rem($pixels, $context: $baseSystemFontSize) {
-  @if (unitless($pixels)) {
+@function rem($pixels, $context: vars.$baseSystemFontSize) {
+  @if (math.is-unitless($pixels)) {
     $pixels: $pixels * 1px;
   }
-  @if (unitless($context)) {
+  @if (math.is-unitless($context)) {
     $context: $context * 1px;
   }
-  @return $pixels / $context * 1rem;
+  @return math.div($pixels, $context) * 1rem;
 }
 
 // size to one line

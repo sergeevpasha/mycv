@@ -1,36 +1,40 @@
+@use "../variables/media";
+@use "../variables/mixins";
+@use "../variables/vars";
+
 /* -----------------------------------------------------------------
     - Navbar
 ----------------------------------------------------------------- */
 
-$size-nav: rem(60px);
+$size-nav: mixins.rem(60px);
 
 .circle-menu {
-  background-color: $tone-color;
-  border-radius: 50% rem(20px) 50% 50%;
-  @include flex($align: center, $justify: center);
+  background-color: vars.$tone-color;
+  border-radius: 50% mixins.rem(20px) 50% 50%;
+  @include mixins.flex($align: center, $justify: center);
   height: $size-nav;
-  @include position(absolute, $top: 0, $right: 0);
+  @include mixins.position(absolute, $top: 0, $right: 0);
   width: $size-nav;
   z-index: 2;
   
-  @media only screen and (max-width: $large) {
-    height: #{$size-nav - rem(3px)};
-	width: #{$size-nav - rem(3px)};
+  @media only screen and (max-width: media.$large) {
+    height: #{$size-nav - mixins.rem(3px)};
+	width: #{$size-nav - mixins.rem(3px)};
   }
   
-  @media only screen and (max-width: $small) {
+  @media only screen and (max-width: media.$small) {
     border-radius: 50%;
-	margin-top: rem(16px);
-	margin-right: rem(16px);
+	margin-top: mixins.rem(16px);
+	margin-right: mixins.rem(16px);
     position: fixed;
-    height: #{$size-nav - rem(20px)};
-	width: #{$size-nav - rem(20px)};
+    height: #{$size-nav - mixins.rem(20px)};
+	width: #{$size-nav - mixins.rem(20px)};
 	z-index: 1101;
   }
   
   .open-menu & {
-    @media only screen and (max-width: $small) {
-	  box-shadow: 0 0 0 rem(1px) rgba($tone-color, .5);
+    @media only screen and (max-width: media.$small) {
+	  box-shadow: 0 0 0 mixins.rem(1px) rgba(vars.$tone-color, .5);
 	  background-color: transparent;
 	}
   }
@@ -41,26 +45,26 @@ $size-nav: rem(60px);
   cursor: pointer;
   
   .line {
-    background-color: $white-color;
-	border-radius: rem(4px);
+    background-color: vars.$white-color;
+	border-radius: mixins.rem(4px);
 	display: block;
-	margin: rem(5px) 0;
-    height: rem(3px);
-    width: rem(24px);
+	margin: mixins.rem(5px) 0;
+    height: mixins.rem(3px);
+    width: mixins.rem(24px);
 	transition: all 0.2s ease-in-out;
 	
 	&:nth-child(2) {
-	  margin-left: rem(4px);
-	  width: rem(20px);
+	  margin-left: mixins.rem(4px);
+	  width: mixins.rem(20px);
 	}
 	
-	@media only screen and (max-width: $medium) {
-	  margin: rem(4px) 0;
-      height: rem(2px);
-      width: rem(18px);
+	@media only screen and (max-width: media.$medium) {
+	  margin: mixins.rem(4px) 0;
+      height: mixins.rem(2px);
+      width: mixins.rem(18px);
 	  
 	  &:nth-child(2) {
-	    width: rem(14px);
+	    width: mixins.rem(14px);
 	  }	  
 	}
   }
@@ -68,7 +72,7 @@ $size-nav: rem(60px);
   &.is-active .line:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
 	
-	@media only screen and (max-width: $medium) {
+	@media only screen and (max-width: media.$medium) {
 	  transform: translateY(6px) rotate(45deg);
 	}
   }
@@ -81,37 +85,37 @@ $size-nav: rem(60px);
   &.is-active .line:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
 	
-	@media only screen and (max-width: $medium) {
+	@media only screen and (max-width: media.$medium) {
 	  transform: translateY(-6px) rotate(-45deg);
 	}	
   }
   
   &.is-active .line {
-    @media only screen and (max-width: $small) {
-	  background-color: $tone-color;
+    @media only screen and (max-width: media.$small) {
+	  background-color: vars.$tone-color;
 	}
   }
 }
 
 // Nav
 .inner-menu {
-  @include flex($align: center, $justify: flex-end);
+  @include mixins.flex($align: center, $justify: flex-end);
   height: $size-nav;
-  padding-right: rem(32px);
-  @include position(absolute, $top: 0, $right: 0);
+  padding-right: mixins.rem(32px);
+  @include mixins.position(absolute, $top: 0, $right: 0);
   width: 70%;
   z-index: 1;
   
-  @media only screen and (max-width: $large) {
-    height: #{$size-nav - rem(3px)};
+  @media only screen and (max-width: media.$large) {
+    height: #{$size-nav - mixins.rem(3px)};
     width: 80%;
   }
   
-  @media only screen and (max-width: $medium) {
+  @media only screen and (max-width: media.$medium) {
     width: 100%;
   }
   
-  @media only screen and (max-width: $small) {
+  @media only screen and (max-width: media.$small) {
     height: 100vh;
     padding-right: 0;
     position: fixed;
@@ -125,64 +129,64 @@ $size-nav: rem(60px);
 }
 
 .nav {
-  color: $white-color;
-  background: $tone-color;
-  border-radius: rem(32px) 0 0 rem(32px);
-  box-shadow: 0 rem(24px) rem(40px) rgba($tone-color, .05), 
-              0 rem(8px) rem(16px) rgba($tone-color, .05);
-  @include flex($align: center, $justify: center);
+  color: vars.$white-color;
+  background: vars.$tone-color;
+  border-radius: mixins.rem(32px) 0 0 mixins.rem(32px);
+  box-shadow: 0 mixins.rem(24px) mixins.rem(40px) rgba(vars.$tone-color, .05), 
+              0 mixins.rem(8px) mixins.rem(16px) rgba(vars.$tone-color, .05);
+  @include mixins.flex($align: center, $justify: center);
   height: 100%;
   overflow: hidden;
   
-  @media only screen and (max-width: $medium) {
-    border-radius: rem(20px) 0 0 rem(32px);
-    font-size: rem(14px);
+  @media only screen and (max-width: media.$medium) {
+    border-radius: mixins.rem(20px) 0 0 mixins.rem(32px);
+    font-size: mixins.rem(14px);
   }  
   
-  @media only screen and (max-width: $small) {
-    @include flex($direction: column, $align: center, $justify: center);
-    color: $black-color;
-    background-color: $white-color;
+  @media only screen and (max-width: media.$small) {
+    @include mixins.flex($direction: column, $align: center, $justify: center);
+    color: vars.$black-color;
+    background-color: vars.$white-color;
 	background-image: none;
     border-radius: 0;
     box-shadow: none;
-	font-size: rem(24px)
+	font-size: mixins.rem(24px)
   }
   
   &__item {
-    margin-right: rem(48px);
+    margin-right: mixins.rem(48px);
 	
-	@media only screen and (max-width: $large) {
-	  margin-right: rem(32px);
+	@media only screen and (max-width: media.$large) {
+	  margin-right: mixins.rem(32px);
 	}
 	
-	@media only screen and (max-width: $small) {
+	@media only screen and (max-width: media.$small) {
 	  margin-right: 0;
-	  margin-top: rem(3px);
-	  margin-bottom: rem(3px);
+	  margin-top: mixins.rem(3px);
+	  margin-bottom: mixins.rem(3px);
 	}
 	
 	a {
-	  color: rgba($white-color,.7);
+	  color: rgba(vars.$white-color,.7);
 	  
 	  &:hover {
-	    color: rgba($white-color,1);
+	    color: rgba(vars.$white-color,1);
 		text-decoration: none;
 	  }
 	  
-	  @media only screen and (max-width: $small) {
-	    color: rgba($black-color,.6);
+	  @media only screen and (max-width: media.$small) {
+	    color: rgba(vars.$black-color,.6);
 	  
 	    &:hover {
-	      color: rgba($black-color,1);
+	      color: rgba(vars.$black-color,1);
 	    }
 	  }
 	  
 	  &.active {
-	    color: $white-color;
+	    color: vars.$white-color;
 		
-		@media only screen and (max-width: $small) {
-		  color: $black-color;
+		@media only screen and (max-width: media.$small) {
+		  color: vars.$black-color;
 		}
 	  }
 	}
@@ -191,7 +195,7 @@ $size-nav: rem(60px);
   &__item:last-child {
 	margin-right: 0;
 	
-	@media only screen and (max-width: $small) {
+	@media only screen and (max-width: media.$small) {
 	  margin-right: 0;
 	}
   }  
@@ -203,11 +207,11 @@ $size-nav: rem(60px);
   width: 100%;
   
   .nav {
-    border-radius: $border-rounded-20 $border-rounded-20 rem(32px) rem(32px);
+    border-radius: vars.$border-rounded-20 vars.$border-rounded-20 mixins.rem(32px) mixins.rem(32px);
     width: 100%;
     transition: width .4s ease-in-out;
   
-    @media only screen and (max-width: $small) {
+    @media only screen and (max-width: media.$small) {
       width: 0;
     }
 	
@@ -218,7 +222,7 @@ $size-nav: rem(60px);
 }
 
 .open-menu .inner-menu-alt .nav {
-  @media only screen and (max-width: $small) {
+  @media only screen and (max-width: media.$small) {
     border-radius: 0;
     width: 100%;
   }

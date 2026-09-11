@@ -1,48 +1,54 @@
+@use "../variables/media";
+@use "../variables/mixins";
+@use "../variables/vars";
+
 /* -----------------------------------------------------------------
     - Contact
 ----------------------------------------------------------------- */
 
+@use "sass:math";
+
 .contact-form {
   .btn {
-    @media only screen and (max-width: $medium) {
+    @media only screen and (max-width: media.$medium) {
 	  width: 100%;
 	}
   }
 
   .tabcontent & {
-    padding-bottom: rem(30px);
+    padding-bottom: mixins.rem(30px);
 
-	@media only screen and (max-width: $small) {
-	  padding-bottom: rem(20px);
+	@media only screen and (max-width: media.$small) {
+	  padding-bottom: mixins.rem(20px);
 	}
   }
 }
 
 // Map
 .map {
-  background-color: $gray-100-color;
-  border-radius: #{$border-rounded-20 / 1.5};
-  height: rem(380px);
-  margin-bottom: rem(32px);
+  background-color: vars.$gray-100-color;
+  border-radius: #{math.div(vars.$border-rounded-20, 1.5)};
+  height: mixins.rem(380px);
+  margin-bottom: mixins.rem(32px);
   position: relative;
   direction: ltr;
 
-  @media only screen and (max-width: $small) {
-    height: rem(250px);
+  @media only screen and (max-width: media.$small) {
+    height: mixins.rem(250px);
   }
 }
 
 .popover-map {
   &-title {
-    color: $black-color;
-    font-size: rem(19px);
-	margin-top: rem(1px);
-	margin-bottom: rem(8px);
+    color: vars.$black-color;
+    font-size: mixins.rem(19px);
+	margin-top: mixins.rem(1px);
+	margin-bottom: mixins.rem(8px);
   }
 
   &-caption {
-    color: $black-color;
-    font-weight: $weight-400;
+    color: vars.$black-color;
+    font-weight: vars.$weight-400;
   }
 }
 
@@ -50,7 +56,7 @@
 #marker {
   background-image: url('../../images/icon-map-pic.svg');
   background-size: cover;
-  width: rem(50px);
-  height: rem(50px);
+  width: mixins.rem(50px);
+  height: mixins.rem(50px);
   cursor: pointer;
 }

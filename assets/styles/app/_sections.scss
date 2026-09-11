@@ -1,8 +1,14 @@
+@use "../variables/media";
+@use "../variables/mixins";
+@use "../variables/vars";
+
 /* -----------------------------------------------------------------
     - Sections
 ----------------------------------------------------------------- */
 
 // Container
+@use "sass:math";
+
 @media (min-width: 1200px) {
   .container {
     max-width: 1240px;
@@ -17,177 +23,177 @@
 
 // Box
 .box {
-  background-color: $white-color;
-  border-radius: $border-rounded-20;
-  padding: rem(30px);
+  background-color: vars.$white-color;
+  border-radius: vars.$border-rounded-20;
+  padding: mixins.rem(30px);
   position: relative;
   transition: box-shadow .3s ease-in-out;
 
-  @media only screen and (max-width: $small) {
-    border-radius: $border-rounded-16;
-    padding: rem(20px);
+  @media only screen and (max-width: media.$small) {
+    border-radius: vars.$border-rounded-16;
+    padding: mixins.rem(20px);
   }
 
   &__second {
-    background-color: $white-color;
-    border-radius: #{$border-rounded-20 / 1.3};
+    background-color: vars.$white-color;
+    border-radius: #{math.div(vars.$border-rounded-20, 1.3)};
 
-	@media only screen and (max-width: $small) {
-	  border-radius: #{$border-rounded-20 / 1.3};
+	@media only screen and (max-width: media.$small) {
+	  border-radius: #{math.div(vars.$border-rounded-20, 1.3)};
 	}
   }
 
   &__large {
-    padding: rem(30px) rem(40px);
+    padding: mixins.rem(30px) mixins.rem(40px);
 
-	@media only screen and (max-width: $large) {
-	  padding: rem(30px);
+	@media only screen and (max-width: media.$large) {
+	  padding: mixins.rem(30px);
 	}
 
-    @media only screen and (max-width: $small) {
-      padding: rem(20px);
+    @media only screen and (max-width: media.$small) {
+      padding: mixins.rem(20px);
     }
 
 	.box-inner::before,
     .box-inner::after {
-	  width: rem(40px);
+	  width: mixins.rem(40px);
 
-	  @media only screen and (max-width: $large) {
-	    width: rem(30px);
+	  @media only screen and (max-width: media.$large) {
+	    width: mixins.rem(30px);
 	  }
 
-	  @media only screen and (max-width: $small) {
-	    width: rem(20px);
+	  @media only screen and (max-width: media.$small) {
+	    width: mixins.rem(20px);
 	  }
 	}
 
 	.box-inner::before {
-	  left: rem(-40px);
+	  left: mixins.rem(-40px);
 
-	  @media only screen and (max-width: $large) {
-	    left: rem(-30px);
+	  @media only screen and (max-width: media.$large) {
+	    left: mixins.rem(-30px);
 	  }
 
-	  @media only screen and (max-width: $small) {
-	    left: rem(-20px);
+	  @media only screen and (max-width: media.$small) {
+	    left: mixins.rem(-20px);
 	  }
 	}
 
     .box-inner::after {
-	  right: rem(-40px);
+	  right: mixins.rem(-40px);
 
-	  @media only screen and (max-width: $large) {
-	    right: rem(-30px);
+	  @media only screen and (max-width: media.$large) {
+	    right: mixins.rem(-30px);
 	  }
 
-	  @media only screen and (max-width: $small) {
-	    right: rem(-20px);
+	  @media only screen and (max-width: media.$small) {
+	    right: mixins.rem(-20px);
 	  }
 	}
   }
 }
 
 .box-inner {
-  background-color: $gray-100-color;
-  padding-top: rem(32px);
-  padding-bottom: rem(32px);
+  background-color: vars.$gray-100-color;
+  padding-top: mixins.rem(32px);
+  padding-bottom: mixins.rem(32px);
   position: relative;
   z-index: 0;
 
-  @media only screen and (max-width: $small) {
-    padding-top: rem(19px);
-    padding-bottom: rem(16px);
+  @media only screen and (max-width: media.$small) {
+    padding-top: mixins.rem(19px);
+    padding-bottom: mixins.rem(16px);
   }
 
   &::before,
   &::after {
     content: '';
-	background-color: $gray-100-color;
+	background-color: vars.$gray-100-color;
 	height: 100%;
-	@include position(absolute, $top: 0);
-	width: rem(30px);
+	@include mixins.position(absolute, $top: 0);
+	width: mixins.rem(30px);
 	z-index: -1;
 
-	@media only screen and (max-width: $small) {
-	  width: rem(20px);
+	@media only screen and (max-width: media.$small) {
+	  width: mixins.rem(20px);
 	}
   }
 
   &::before {
-	left: rem(-30px);
+	left: mixins.rem(-30px);
 
-	@media only screen and (max-width: $small) {
-	  left: rem(-20px);
+	@media only screen and (max-width: media.$small) {
+	  left: mixins.rem(-20px);
 	}
   }
 
   &::after {
-	right: rem(-30px);
+	right: mixins.rem(-30px);
 
-	@media only screen and (max-width: $small) {
-	  right: rem(-20px);
+	@media only screen and (max-width: media.$small) {
+	  right: mixins.rem(-20px);
 	}
   }
 
   &--rounded {
     &::before {
-	  border-radius: 0 0 0 $border-rounded-20;
+	  border-radius: 0 0 0 vars.$border-rounded-20;
 	}
 
     &::after {
-      border-radius: 0 0 $border-rounded-20 0;
+      border-radius: 0 0 vars.$border-rounded-20 0;
     }
 
-	@media only screen and (max-width: $small) {
+	@media only screen and (max-width: media.$small) {
 	  &::before {
-	    border-radius: 0 0 0 $border-rounded-16;
+	    border-radius: 0 0 0 vars.$border-rounded-16;
 	  }
 
       &::after {
-        border-radius: 0 0 $border-rounded-16 0;
+        border-radius: 0 0 vars.$border-rounded-16 0;
       }
 	}
   }
 
   &--white {
-    background-color: $white-color;
+    background-color: vars.$white-color;
 
     &::before,
     &::after {
-	  background-color: $white-color;
+	  background-color: vars.$white-color;
 	}
   }
 }
 
 // Shadows
 .shadow {
-  box-shadow: 0 rem(40px) rem(50px) rgba(103, 118, 128, 0.1)!important;
+  box-shadow: 0 mixins.rem(40px) mixins.rem(50px) rgba(103, 118, 128, 0.1)!important;
 
   &::before {
     content: '';
-	box-shadow: 0 rem(30px) rem(50px) rgba(103, 118, 128, 0.2);
-	@include position(absolute, $left: 0, $bottom: 0, $right: 0);
+	box-shadow: 0 mixins.rem(30px) mixins.rem(50px) rgba(103, 118, 128, 0.2);
+	@include mixins.position(absolute, $left: 0, $bottom: 0, $right: 0);
 	margin: 0 auto;
-	height: rem(32px);
+	height: mixins.rem(32px);
 	width: 65%;
 	z-index: -1;
   }
 
   // orange
   &--orange {
-    box-shadow: 0 rem(40px) rem(50px) rgba(177, 68, 27, 0.1)!important;
+    box-shadow: 0 mixins.rem(40px) mixins.rem(50px) rgba(177, 68, 27, 0.1)!important;
 
     &::before {
-	  box-shadow: 0 rem(40px) rem(50px) rgba(177, 68, 27, 0.1);
+	  box-shadow: 0 mixins.rem(40px) mixins.rem(50px) rgba(177, 68, 27, 0.1);
     }
   }
 
   // green
   &--green {
-    box-shadow: 0 rem(40px) rem(50px) rgba(0, 115, 97, 0.1)!important;
+    box-shadow: 0 mixins.rem(40px) mixins.rem(50px) rgba(0, 115, 97, 0.1)!important;
 
     &::before {
-	  box-shadow: 0 rem(40px) rem(50px) rgba(0, 115, 97, 0.1);
+	  box-shadow: 0 mixins.rem(40px) mixins.rem(50px) rgba(0, 115, 97, 0.1);
     }
   }
 }
@@ -206,31 +212,31 @@
 
   &::before {
     content: '';
-    background-color: rgba($black-color, .35);
-	@include position(absolute, $top: 0, $left: 0);
+    background-color: rgba(vars.$black-color, .35);
+	@include mixins.position(absolute, $top: 0, $left: 0);
 	height: 100%;
 	width: 100%;
 	z-index: 2;
   }
   &--45 {
     &::before {
-	  background-color: rgba($black-color, .45);
+	  background-color: rgba(vars.$black-color, .45);
       @extend .overlay, ::before
 	}
   }
   &--80 {
     &::before {
-	  background-color: rgba($black-color, .8);
+	  background-color: rgba(vars.$black-color, .8);
       @extend .overlay, ::before
 	}
   }
 }
 
 .gutter-top {
-  padding-top: rem(160px);
+  padding-top: mixins.rem(160px);
 
-  @media only screen and (max-width: $small) {
-    padding-top: rem(144px);
+  @media only screen and (max-width: media.$small) {
+    padding-top: mixins.rem(144px);
   }
 }
 
@@ -241,7 +247,7 @@
   width: 100%;
 
   &--180 {
-    $size: rem(180px);
+    $size: mixins.rem(180px);
     max-height: $size;
     max-width: $size;
     height: $size;
@@ -249,32 +255,32 @@
   }
 
   &--80 {
-    $size: rem(80px);
+    $size: mixins.rem(80px);
     max-height: $size;
     max-width: $size;
-	filter: drop-shadow(rem(-2.5px) 0 0 $white-color)
-	        drop-shadow(rem(3px) 0 0 $white-color)
-			drop-shadow(0 rem(-2px) 0 $white-color)
-			drop-shadow(0 rem(2px) 0 $white-color)
-			drop-shadow(0 rem(4px) rem(4px) rgba($gray-300-color, .25))
-	        drop-shadow(0 rem(8px) rem(8px) rgba($gray-300-color, .4));
+	filter: drop-shadow(mixins.rem(-2.5px) 0 0 vars.$white-color)
+	        drop-shadow(mixins.rem(3px) 0 0 vars.$white-color)
+			drop-shadow(0 mixins.rem(-2px) 0 vars.$white-color)
+			drop-shadow(0 mixins.rem(2px) 0 vars.$white-color)
+			drop-shadow(0 mixins.rem(4px) mixins.rem(4px) rgba(vars.$gray-300-color, .25))
+	        drop-shadow(0 mixins.rem(8px) mixins.rem(8px) rgba(vars.$gray-300-color, .4));
 
-	@media only screen and (max-width: $small) {
-      max-height: #{$size / 1.5};
-      max-width: #{$size / 1.5};
+	@media only screen and (max-width: media.$small) {
+      max-height: #{math.div($size, 1.5)};
+      max-width: #{math.div($size, 1.5)};
     }
   }
 
   &--60 {
-    $size: rem(60px);
+    $size: mixins.rem(60px);
     max-height: $size;
     max-width: $size;
-	filter: drop-shadow(0 rem(4px) rem(4px) rgba($gray-300-color, .2))
-	        drop-shadow(0 rem(8px) rem(8px) rgba($gray-300-color, .2));
+	filter: drop-shadow(0 mixins.rem(4px) mixins.rem(4px) rgba(vars.$gray-300-color, .2))
+	        drop-shadow(0 mixins.rem(8px) mixins.rem(8px) rgba(vars.$gray-300-color, .2));
 
-	@media only screen and (max-width: $small) {
-      max-height: #{$size / 1.33};
-      max-width: #{$size / 1.33};
+	@media only screen and (max-width: media.$small) {
+      max-height: #{math.div($size, 1.33)};
+      max-width: #{math.div($size, 1.33)};
     }
   }
 
@@ -297,19 +303,19 @@
 // Social
 .social {
   line-height: 0;
-  margin-top: rem(24px);
-  margin-bottom: rem(22px);
+  margin-top: mixins.rem(24px);
+  margin-bottom: mixins.rem(22px);
 
-  @media only screen and (min-width: $small) {
-    margin-top: rem(18px);
-    margin-bottom: rem(16px);
+  @media only screen and (min-width: media.$small) {
+    margin-top: mixins.rem(18px);
+    margin-bottom: mixins.rem(16px);
   }
 
   &__link {
-    color: $black-color;
+    color: vars.$black-color;
 	display: inline-block;
-	font-size: rem(14px);
-	margin-left: rem(13px);
+	font-size: mixins.rem(14px);
+	margin-left: mixins.rem(13px);
 	text-decoration: none;
 
 	&:hover {
@@ -324,7 +330,7 @@
 }
 
 .pt-sm-6 {
-  @media only screen and (min-width: $small) {
-    padding-top: rem(80px);
+  @media only screen and (min-width: media.$small) {
+    padding-top: mixins.rem(80px);
   }
 }

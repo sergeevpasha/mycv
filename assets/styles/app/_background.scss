@@ -1,3 +1,6 @@
+@use "../variables/media";
+@use "../variables/vars";
+
 // Background
 .bg {
   &-triangles {
@@ -7,7 +10,7 @@
     background-repeat: no-repeat;
 	background-size: inherit;
 
-	@media only screen and (max-width: $small) {
+	@media only screen and (max-width: media.$small) {
 	  background-size: contain;
 	}
   }
@@ -20,23 +23,23 @@
 	background-size: 50%;
 	background-attachment: fixed;
 
-	@media only screen and (max-width: $large) {
+	@media only screen and (max-width: media.$large) {
 	  background-size: contain;
 	}
   }
 
   &-peach {
-    background-image: $gradient-3;
+    background-image: vars.$gradient-3;
 	background-attachment: fixed;
   }
 
   &-green {
-    background-image: $gradient-4;
+    background-image: vars.$gradient-4;
 	background-attachment: fixed;
   }
 
   &-green-2 {
-    background-image: $gradient-5;
+    background-image: vars.$gradient-5;
 	background-attachment: fixed;
   }
 }

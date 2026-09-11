@@ -1,3 +1,7 @@
+@use "../variables/media";
+@use "../variables/mixins";
+@use "../variables/vars";
+
 /* -----------------------------------------------------------------
     - General Styles
 ----------------------------------------------------------------- */
@@ -10,7 +14,7 @@
 }
 
 html {
-  font-size: $baseSystemFontSize;
+  font-size: vars.$baseSystemFontSize;
   -webkit-overflow-scrolling: touch;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -18,23 +22,23 @@ html {
 }
 
 body, html {
-  font-size: rem(16px);
+  font-size: mixins.rem(16px);
   -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background-color: $gray-50-color;
-  color: $black-color;
-  font-family: $font-body;
-  font-size: rem(15px);
-  font-weight: $weight-400;
+  background-color: vars.$gray-50-color;
+  color: vars.$black-color;
+  font-family: vars.$font-body;
+  font-size: mixins.rem(15px);
+  font-weight: vars.$weight-400;
   line-height: 1.65;
   min-height: 100vh;
   overflow-x: hidden;
   -ms-overflow-style: scrollbar;
   -webkit-font-smoothing: antialiased;
   
-  @media only screen and (max-width: $small) {
+  @media only screen and (max-width: media.$small) {
     line-height: 1.6;
   }
 }

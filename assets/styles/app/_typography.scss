@@ -1,61 +1,67 @@
+@use "../variables/media";
+@use "../variables/mixins";
+@use "../variables/vars";
+
 /* -----------------------------------------------------------------
     - Typography
 ----------------------------------------------------------------- */
 
+@use "sass:math";
+
 h1, h2, h3, h4, h5, h6 {
-  font-family: $font-title;
-  font-weight: $weight-700;
+  font-family: vars.$font-title;
+  font-weight: vars.$weight-700;
   line-height: 1.3;
 }
 
 .title {
   &--h1 {
-    font-size: rem(32px);
-	margin-bottom: rem(17px);
+    font-size: mixins.rem(32px);
+	margin-bottom: mixins.rem(17px);
 
-	@media only screen and (max-width: $small) {
-	  font-size: rem(28px);
+	@media only screen and (max-width: media.$small) {
+	  font-size: mixins.rem(28px);
 	}
   }
 
   &--h2 {
-    font-size: rem(28px);
+    font-size: mixins.rem(28px);
 
-	@media only screen and (max-width: $small) {
-	  font-size: rem(24px);
+	@media only screen and (max-width: media.$small) {
+	  font-size: mixins.rem(24px);
 	}
   }
 
   &--h3 {
-    font-size: rem(24px);
-	margin-bottom: rem(21px);
+    font-size: mixins.rem(24px);
+	margin-bottom: mixins.rem(21px);
 
-	@media only screen and (max-width: $small) {
-	  font-size: rem(20px);
-	  margin-bottom: rem(16px);
+	@media only screen and (max-width: media.$small) {
+	  font-size: mixins.rem(20px);
+	  margin-bottom: mixins.rem(16px);
 	}
 
   }
 
   &--h4 {
-    font-size: rem(20px);
-	margin-bottom: rem(13px);
+    font-size: mixins.rem(20px);
+	margin-bottom: mixins.rem(13px);
 
-	@media only screen and (max-width: $small) {
-	  font-size: rem(16px);
+	@media only screen and (max-width: media.$small) {
+	  font-size: mixins.rem(16px);
 	}
   }
 
   &--h5 {
-    font-size: rem(16px);
+    font-size: mixins.rem(16px);
 
-	@media only screen and (max-width: $small) {
-	  font-size: rem(15px);
+	@media only screen and (max-width: media.$small) {
+	  font-size: mixins.rem(15px);
 	}
   }
 
   &--h6 {
-    font-size: rem(12px);
+    font-size: mixins.rem(12px);
   }
 
   &--center {
@@ -63,111 +69,111 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   &--tone {
-    color: $tone-color;
+    color: vars.$tone-color;
   }
 
   &-icon {
-    $size: rem(40px);
-	margin-right: rem(8px);
-	margin-top: rem(-4px);
+    $size: mixins.rem(40px);
+	margin-right: mixins.rem(8px);
+	margin-top: mixins.rem(-4px);
 	height: $size;
 	width: $size;
 
-	@media only screen and (max-width: $small) {
-	  height: #{$size / 1.2};
-	  width: #{$size / 1.2};
+	@media only screen and (max-width: media.$small) {
+	  height: #{math.div($size, 1.2)};
+	  width: #{math.div($size, 1.2)};
 	}
   }
 
   &__separate {
-    margin-bottom: rem(37px);
+    margin-bottom: mixins.rem(37px);
     position: relative;
 
     &::before {
       content: '';
-	  background-color: $tone-color;
-	  border-radius: rem(8px);
-	  height: rem(5px);
-	  @include position(absolute, $left: 0, $bottom: rem(-17px));
-	  width: rem(50px);
+	  background-color: vars.$tone-color;
+	  border-radius: mixins.rem(8px);
+	  height: mixins.rem(5px);
+	  @include mixins.position(absolute, $left: 0, $bottom: mixins.rem(-17px));
+	  width: mixins.rem(50px);
 	  z-index: 1;
     }
 
-    @media only screen and (max-width: $small) {
-	  margin-bottom: rem(24px);
+    @media only screen and (max-width: media.$small) {
+	  margin-bottom: mixins.rem(24px);
 
 	  &::before {
-	    height: rem(3px);
-	    bottom: rem(-9px);
-	    width: rem(48px);
+	    height: mixins.rem(3px);
+	    bottom: mixins.rem(-9px);
+	    width: mixins.rem(48px);
       }
 	}
   }
 }
 
 .first-title {
-  @media only screen and (max-width: $large) {
+  @media only screen and (max-width: media.$large) {
 	transition: all .3s ease-in-out;
   }
 }
 
 .open-menu .first-title {
-  @media only screen and (max-width: $large) {
-    padding-top: rem(41px);
+  @media only screen and (max-width: media.$large) {
+    padding-top: mixins.rem(41px);
   }
 
-  @media only screen and (max-width: $small) {
+  @media only screen and (max-width: media.$small) {
     padding-top: 0;
   }
 }
 
 .weight {
   &--400 {
-    font-weight: $weight-400; //regular
+    font-weight: vars.$weight-400; //regular
   }
   &--500 {
-    font-weight: $weight-500; //medium
+    font-weight: vars.$weight-500; //medium
   }
   &--600 {
-    font-weight: $weight-600; //semi bold
+    font-weight: vars.$weight-600; //semi bold
   }
   &--700 {
-    font-weight: $weight-700; //bold
+    font-weight: vars.$weight-700; //bold
   }
 }
 
 .color {
   &--light {
-    color: $gray-300-color;
+    color: vars.$gray-300-color;
   }
 
   &--dark {
-    color: $black-color;
+    color: vars.$black-color;
   }
 }
 
 .block-quote {
   font: {
-	size: rem(21px);
-	weight: $weight-400;
+	size: mixins.rem(21px);
+	weight: vars.$weight-400;
 	style: italic;
   }
-  margin: rem(29px) 0;
+  margin: mixins.rem(29px) 0;
   position: relative;
   line-height: 1.6;
 
-  @media only screen and (max-width: $large) {
-    padding-left: rem(61px);
+  @media only screen and (max-width: media.$large) {
+    padding-left: mixins.rem(61px);
   }
 
-  @media only screen and (max-width: $small) {
-    font-size: rem(18px);
-	margin: rem(16px) 0;
+  @media only screen and (max-width: media.$small) {
+    font-size: mixins.rem(18px);
+	margin: mixins.rem(16px) 0;
 	padding-left: 0;
-	padding-top: rem(45px);
+	padding-top: mixins.rem(45px);
 
 	p {
-	  margin-bottom: rem(8px);
+	  margin-bottom: mixins.rem(8px);
 	}
   }
 
@@ -177,57 +183,57 @@ h1, h2, h3, h4, h5, h6 {
     background-position: center;
 	background-size: cover;
     content: '';
-    height: rem(34px);
+    height: mixins.rem(34px);
     margin: 0 auto;
-	@include position(absolute, $top: 0, $left: rem(-54px));
-    width: rem(34px);
+	@include mixins.position(absolute, $top: 0, $left: mixins.rem(-54px));
+    width: mixins.rem(34px);
 
-	@media only screen and (max-width: $large) {
+	@media only screen and (max-width: media.$large) {
       left: 0;
 	}
   }
 
   &__author {
     font: {
-	  size: rem(16px);
+	  size: mixins.rem(16px);
 	  style: normal;
     }
 	display: block;
-	margin-top: rem(9px);
-	padding-left: rem(48px);
+	margin-top: mixins.rem(9px);
+	padding-left: mixins.rem(48px);
 	position: relative;
 
-	@media only screen and (max-width: $small) {
-	  font-size: rem(14px);
+	@media only screen and (max-width: media.$small) {
+	  font-size: mixins.rem(14px);
 	  margin-top: 0;
-	  padding-left: rem(32px);
+	  padding-left: mixins.rem(32px);
 	}
 
 	&::before {
 	  content: '';
-	  background-color: $black-color;
-	  height: rem(1px);
+	  background-color: vars.$black-color;
+	  height: mixins.rem(1px);
 	  margin-bottom: auto;
 	  margin-top: auto;
-	  @include position(absolute, $top: 0, $left: 0, $bottom: 0);
-	  width: rem(32px);
+	  @include mixins.position(absolute, $top: 0, $left: 0, $bottom: 0);
+	  width: mixins.rem(32px);
 
-	  @media only screen and (max-width: $small) {
-	    width: rem(16px);
+	  @media only screen and (max-width: media.$small) {
+	    width: mixins.rem(16px);
 	  }
 	}
   }
 }
 
 a {
-  color: $tone-color;
+  color: vars.$tone-color;
   cursor: pointer;
   text-decoration: none;
   -webkit-text-decoration-skip: objects;
   transition: color .3s cubic-bezier(.72,.16,.345,.875);
 
   &:hover {
-    color: $tone-color;
+    color: vars.$tone-color;
 	outline: none;
     text-decoration: underline;
   }
@@ -253,13 +259,13 @@ a {
 }
 
 .description {
-  color: $gray-100-color;
-  margin-bottom: rem(30px);
+  color: vars.$gray-100-color;
+  margin-bottom: mixins.rem(30px);
 }
 
 .foreword {
-  color: $gray-100-color;
-  font-size: rem(18px);
+  color: vars.$gray-100-color;
+  font-size: mixins.rem(18px);
 }
 
 img {
@@ -271,7 +277,7 @@ img {
 }
 
 iframe {
-  background-color: $black-color;
+  background-color: vars.$black-color;
   border: 0;
   display: block;
   height: 100%;
@@ -286,5 +292,5 @@ iframe {
   width: 100%;
 }
 
-::-moz-selection {background: transparent; color: $tone-color;}
-	 ::selection {background: transparent; color: $tone-color;}
+::-moz-selection {background: transparent; color: vars.$tone-color;}
+	 ::selection {background: transparent; color: vars.$tone-color;}

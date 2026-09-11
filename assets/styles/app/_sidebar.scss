@@ -1,61 +1,65 @@
+@use "../variables/media";
+@use "../variables/mixins";
+@use "../variables/vars";
+
 /* -----------------------------------------------------------------
     - Sidebar
 ----------------------------------------------------------------- */
 
 .sidebar {
-  @media only screen and (max-width: $large-xl) {
-    margin-bottom: rem(30px);
+  @media only screen and (max-width: media.$large-xl) {
+    margin-bottom: mixins.rem(30px);
   }
 
-  @media only screen and (max-width: $small) {
-    margin-bottom: rem(16px);
+  @media only screen and (max-width: media.$small) {
+    margin-bottom: mixins.rem(16px);
   }
 
   .avatar {
-    margin-top: rem(-128px);
-    margin-bottom: rem(25px);
+    margin-top: mixins.rem(-128px);
+    margin-bottom: mixins.rem(25px);
     margin-left: auto;
     margin-right: auto;
     transition: all .3s ease-in-out;
   }
 
   &__user-name {
-    font-size: rem(29px);
-    font-family: $font-additional;
-    margin-bottom: rem(14px);
+    font-size: mixins.rem(29px);
+    font-family: vars.$font-additional;
+    margin-bottom: mixins.rem(14px);
     position: relative;
 
-    @media only screen and (max-width: $small) {
-      font-size: rem(24px);
-      margin-bottom: rem(10px);
+    @media only screen and (max-width: media.$small) {
+      font-size: mixins.rem(24px);
+      margin-bottom: mixins.rem(10px);
     }
   }
 
   &__info {
-    padding-top: rem(25px);
+    padding-top: mixins.rem(25px);
 
-    @media only screen and (max-width: $large-xl) {
+    @media only screen and (max-width: media.$large-xl) {
       text-align: center;
     }
 
-    @media only screen and (max-width: $small) {
-      padding-top: rem(24px);
-      padding-bottom: rem(20px);
+    @media only screen and (max-width: media.$small) {
+      padding-top: mixins.rem(24px);
+      padding-bottom: mixins.rem(20px);
     }
   }
 
   .btn {
     width: 100%;
 
-    @media only screen and (max-width: $large-xl) {
+    @media only screen and (max-width: media.$large-xl) {
       width: 40%;
     }
 
-    @media only screen and (max-width: $large) {
+    @media only screen and (max-width: media.$large) {
       width: 60%;
     }
 
-    @media only screen and (max-width: $medium) {
+    @media only screen and (max-width: media.$medium) {
       width: 100%;
     }
   }
@@ -65,62 +69,62 @@
 .contacts-block {
   list-style: none;
   padding-left: 0;
-  margin-bottom: rem(8px);
+  margin-bottom: mixins.rem(8px);
   overflow: hidden;
 
-  @media only screen and (max-width: $large-xl) {
-    margin-bottom: rem(16px);
+  @media only screen and (max-width: media.$large-xl) {
+    margin-bottom: mixins.rem(16px);
   }
 
-  @media only screen and (max-width: $medium) {
-    margin-bottom: rem(8px);
-    font-size: rem(16px);
+  @media only screen and (max-width: media.$medium) {
+    margin-bottom: mixins.rem(8px);
+    font-size: mixins.rem(16px);
   }
 
-  @media only screen and (max-width: $small) {
-    font-size: rem(15px);
+  @media only screen and (max-width: media.$small) {
+    font-size: mixins.rem(15px);
   }
 
   &__item {
-    @include flex($align: center);
-    margin-bottom: rem(11px);
+    @include mixins.flex($align: center);
+    margin-bottom: mixins.rem(11px);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 
-    @media only screen and (max-width: $large-xl) {
+    @media only screen and (max-width: media.$large-xl) {
       display: inline-block;
       margin-bottom: 0;
-      margin-right: rem(24px);
+      margin-right: mixins.rem(24px);
     }
 
-    @media only screen and (max-width: $medium) {
+    @media only screen and (max-width: media.$medium) {
       display: block;
       margin-left: auto;
       margin-right: auto;
-      margin-bottom: rem(4px);
+      margin-bottom: mixins.rem(4px);
     }
 
     a {
-      color: $black-color;
+      color: vars.$black-color;
       text-decoration: none;
 
       &:hover {
-        color: $tone-color;
+        color: vars.$tone-color;
       }
     }
   }
 
   .font-icon {
-    font-size: rem(18px);
-    margin-right: rem(14px);
+    font-size: mixins.rem(18px);
+    margin-right: mixins.rem(14px);
   }
 }
 
 .sticky-column {
-  padding: rem(26px) !important;
+  padding: mixins.rem(26px) !important;
   &.is_stuck {
-    margin-top: rem(10px);
+    margin-top: mixins.rem(10px);
 
     .avatar {
       margin-top: 0;

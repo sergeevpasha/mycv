@@ -1,10 +1,14 @@
+@use "../variables/media";
+@use "../variables/mixins";
+@use "../variables/vars";
+
 /* -----------------------------------------------------------------
     - Clients
 ----------------------------------------------------------------- */
 
 .js-carousel-clients {
-  padding-top: rem(8px);
-  padding-bottom: rem(16px);
+  padding-top: mixins.rem(8px);
+  padding-bottom: mixins.rem(16px);
 
   .swiper-slide {
     a {
@@ -12,13 +16,13 @@
       align-items: center;
       text-decoration: none;
       color: #fff;
-      font-family: $font-additional;
+      font-family: vars.$font-additional;
       font-weight: 600;
       img {
         margin-right: 8px;
       }
     }
-    @media only screen and (max-width: $small) {
+    @media only screen and (max-width: media.$small) {
       text-align: center;
     }
   }

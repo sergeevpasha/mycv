@@ -1,35 +1,39 @@
+@use "../variables/media";
+@use "../variables/mixins";
+@use "../variables/vars";
+
 /* -----------------------------------------------------------------
     - Cases
 ----------------------------------------------------------------- */
 
 .case-item {
-  @include flex();
-  height: calc(100% - rem(30px));
-  margin-bottom: rem(30px);
-  padding: rem(30px) rem(30px) rem(24px);
+  @include mixins.flex();
+  height: calc(100% - mixins.rem(30px));
+  margin-bottom: mixins.rem(30px);
+  padding: mixins.rem(30px) mixins.rem(30px) mixins.rem(24px);
   position: relative;
   
-  @media only screen and (max-width: $large) {
-    height: calc(100% - rem(20px));
+  @media only screen and (max-width: media.$large) {
+    height: calc(100% - mixins.rem(20px));
   }
   
-  @media only screen and (max-width: $small) {
-    @include flex($align: center, $direction: column);
-    height: calc(100% - rem(20px));
-	margin-bottom: rem(20px);
-	padding: rem(16px);
+  @media only screen and (max-width: media.$small) {
+    @include mixins.flex($align: center, $direction: column);
+    height: calc(100% - mixins.rem(20px));
+	margin-bottom: mixins.rem(20px);
+	padding: mixins.rem(16px);
 	text-align: center;
   }  
   
   &__icon {
-    $size: rem(40px);
-	margin-right: rem(19px);
+    $size: mixins.rem(40px);
+	margin-right: mixins.rem(19px);
 	height: $size;
 	width: $size;
 	
-	@media only screen and (max-width: $small) {
+	@media only screen and (max-width: media.$small) {
 	  margin-right: 0;
-      margin-bottom: rem(13px);
+      margin-bottom: mixins.rem(13px);
 	}
   }
   
@@ -38,7 +42,7 @@
   }
   
   &__caption {
-    color: $gray-400-color;
+    color: vars.$gray-400-color;
 
 	line-height: 1.5;
   }

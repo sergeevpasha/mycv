@@ -1,16 +1,20 @@
+@use "../variables/media";
+@use "../variables/mixins";
+@use "../variables/vars";
+
 /* -----------------------------------------------------------------
     - Other
 ----------------------------------------------------------------- */ 
 
 // Bact to top
 .back-to-top {
-  border-top: rem(1px) solid $black-color;
-  border-left: rem(1px) solid $black-color;
+  border-top: mixins.rem(1px) solid vars.$black-color;
+  border-left: mixins.rem(1px) solid vars.$black-color;
   cursor: pointer;
-  height: rem(32px);
+  height: mixins.rem(32px);
   opacity: .5;
-  @include position(fixed, $right: rem(40px), $bottom: rem(30px));
-  width: rem(32px);
+  @include mixins.position(fixed, $right: mixins.rem(40px), $bottom: mixins.rem(30px));
+  width: mixins.rem(32px);
   transform: rotate(45deg);
   transition: opacity .35s ease-out;
   z-index: 10;
@@ -19,12 +23,12 @@
     opacity: 1;
   }
   
-  @media only screen and (max-width: $medium) {
-    height: rem(24px);
-	width: rem(24px);
+  @media only screen and (max-width: media.$medium) {
+    height: mixins.rem(24px);
+	width: mixins.rem(24px);
   }
   
-  @media only screen and (max-width: $small) {
+  @media only screen and (max-width: media.$small) {
     display: none!important;
   }
 }
@@ -43,7 +47,7 @@
 
 // Medium Zoom
 .medium-zoom-overlay {
-  background: $white-color!important;
+  background: vars.$white-color!important;
   z-index: 1104;
 }
 .medium-zoom-image {
@@ -51,7 +55,7 @@
   z-index: 1104;
   
   &--opened {
-    border-radius: rem(1px);
+    border-radius: mixins.rem(1px);
 	height: 100%;
   }
 }

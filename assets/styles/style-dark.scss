@@ -56,9 +56,9 @@ $version: "1.0.2";
 ------------------------------------------------ */
 
 // Variables
-@import 'variables/vars';
-@import 'variables/mixins';
-@import 'variables/media';
+@use 'variables/vars';
+@use 'variables/mixins';
+@use 'variables/media';
 
 
 /* -----------------------------------------------------------------
@@ -66,21 +66,21 @@ $version: "1.0.2";
 ----------------------------------------------------------------- */
 
 body {
-  background-color: $dark-black-1;
-  color: $gray-body;
+  background-color: vars.$dark-black-1;
+  color: vars.$gray-body;
 }
 
 // Input Text
 %formStyle {
-  background-color: $dark-black-3;
-  border: 1px solid $dark-black-3;
-  color: $white-color;
+  background-color: vars.$dark-black-3;
+  border: 1px solid vars.$dark-black-3;
+  color: vars.$white-color;
 }
 
 %formStyle-focus {
-  background-color: $dark-black-1;
-  border: 1px solid $dark-tone-color;
-  color: $white-color;
+  background-color: vars.$dark-black-1;
+  border: 1px solid vars.$dark-tone-color;
+  color: vars.$white-color;
 }
 
 .input {
@@ -91,10 +91,10 @@ body {
   }
 
   &--white {
-    background-color: $dark-black-3;
+    background-color: vars.$dark-black-3;
 
 	&:focus {
-	  background-color: $dark-black-3;
+	  background-color: vars.$dark-black-3;
 	}
   }
 }
@@ -107,70 +107,70 @@ body {
   }
 
   &--white {
-    background-color: $dark-black-3;
+    background-color: vars.$dark-black-3;
 
 	&:focus {
-	  background-color: $dark-black-3;
+	  background-color: vars.$dark-black-3;
 	}
   }
 }
 
 .form-group {
   .font-icon {
-    color: rgba($gray-body,.5);
+    color: rgba(vars.$gray-body,.5);
   }
 }
 
 .form-control::-webkit-input-placeholder {
-  color: rgba($gray-body,.5);
+  color: rgba(vars.$gray-body,.5);
 }
 
 .form-control::-moz-placeholder {
-  color: rgba($gray-body,.5);
+  color: rgba(vars.$gray-body,.5);
 }
 
 .form-control:-ms-input-placeholder {
-  color: rgba($gray-body,.5);
+  color: rgba(vars.$gray-body,.5);
 }
 
 .form-control::-ms-input-placeholder {
-  color: rgba($gray-body,.5);
+  color: rgba(vars.$gray-body,.5);
 }
 
 .form-control::placeholder {
-  color: rgba($gray-body,.5);
+  color: rgba(vars.$gray-body,.5);
 }
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-  -webkit-text-fill-color: $dark-black-3!important;
+  -webkit-text-fill-color: vars.$dark-black-3!important;
 }
 
 // Checkbox
 .custom-control-input {
   &:focus ~ .custom-control-label::before {
-    box-shadow: 0 0 0 rem(2px) rgba($dark-tone-color, 0.25);
+    box-shadow: 0 0 0 mixins.rem(2px) rgba(vars.$dark-tone-color, 0.25);
   }
 
   &:focus:not(:checked) ~ .custom-control-label::before {
-    border-color: $dark-tone-color;
+    border-color: vars.$dark-tone-color;
   }
 
   &:not(:disabled):active~.custom-control-label::before {
-    border-color: $gray-300-color;
+    border-color: vars.$gray-300-color;
   }
 
   &:checked~.custom-control-label::before {
-    border-color: $dark-tone-color;
-    background-color: $dark-tone-color;
+    border-color: vars.$dark-tone-color;
+    background-color: vars.$dark-tone-color;
   }
 }
 
 .custom-control-label {
   &::before {
-    border: 1px solid $gray-300-color;
+    border: 1px solid vars.$gray-300-color;
   }
 }
 
@@ -185,26 +185,26 @@ select,
   }
 
   option {
-    color: $white-color;
+    color: vars.$white-color;
   }
 }
 
 // Dropdown
 .dropdown {
   &-menu {
-    background-color: $dark-black-2;
-    box-shadow: 0 8px 40px rgba($absolute-black, .5);
-    color: $gray-body;
+    background-color: vars.$dark-black-2;
+    box-shadow: 0 8px 40px rgba(vars.$absolute-black, .5);
+    color: vars.$gray-body;
 
 	&::before {
-      border-bottom: .4rem solid $dark-black-2;
+      border-bottom: .4rem solid vars.$dark-black-2;
 	}
   }
 
   &.dropup {
     .dropdown-menu {
       &::before {
-	    border-top: .4rem solid $dark-black-2;
+	    border-top: .4rem solid vars.$dark-black-2;
 	  }
 	}
   }
@@ -212,71 +212,71 @@ select,
 
 // Progress
 .progress {
-  background-color: $dark-black-2;
+  background-color: vars.$dark-black-2;
 
   &-bar {
-    background-color: $dark-tone-color;
+    background-color: vars.$dark-tone-color;
   }
 }
 
 // Badges
 .badge {
   &--blue {
-    background-color: $dark-tone-color;
+    background-color: vars.$dark-tone-color;
   }
 }
 
 // Badges
 .badge {
   &--dark {
-    background-color: $dark-black-1;
+    background-color: vars.$dark-black-1;
   }
 }
 
 // Tooltips
 .tooltip {
   &-inner {
-    background-color: $dark-black-2;
-	box-shadow: 0px 16px 48px rgba($absolute-black, .25),
-                0px 2px 32px rgba($absolute-black, .5);
+    background-color: vars.$dark-black-2;
+	box-shadow: 0px 16px 48px rgba(vars.$absolute-black, .25),
+                0px 2px 32px rgba(vars.$absolute-black, .5);
   }
 }
 
 .bs-tooltip-top .arrow::before,
 .bs-tooltip-auto[x-placement^="top"] .arrow::before {
-  border-top-color: $dark-black-2;
+  border-top-color: vars.$dark-black-2;
 }
 
 .bs-tooltip-right .arrow::before,
 .bs-tooltip-auto[x-placement^="right"] .arrow::before {
-  border-right-color: $dark-black-2;
+  border-right-color: vars.$dark-black-2;
 }
 
 .bs-tooltip-left .arrow::before,
 .bs-tooltip-auto[x-placement^="left"] .arrow::before {
-  border-left-color: $dark-black-2;
+  border-left-color: vars.$dark-black-2;
 }
 
 .bs-tooltip-bottom .arrow::before,
 .bs-tooltip-auto[x-placement^="bottom"] .arrow::before {
-  border-bottom-color: $dark-black-2;
+  border-bottom-color: vars.$dark-black-2;
 }
 
 // Button
 .btn {
-  background-color: $dark-tone-color;
-  box-shadow: 0 rem(8px) rem(16px) rgba($dark-tone-color, .15),
-              0 rem(2px) rem(4px) rgba($dark-tone-color, .15);
+  background-color: vars.$dark-tone-color;
+  box-shadow: 0 mixins.rem(8px) mixins.rem(16px) rgba(vars.$dark-tone-color, .15),
+              0 mixins.rem(2px) mixins.rem(4px) rgba(vars.$dark-tone-color, .15);
 
   &:focus {
-    box-shadow: 0 rem(24px) rem(40px) rgba($dark-tone-color, .1),
-                0 rem(8px) rem(16px) rgba($dark-tone-color, .1);
+    box-shadow: 0 mixins.rem(24px) mixins.rem(40px) rgba(vars.$dark-tone-color, .1),
+                0 mixins.rem(8px) mixins.rem(16px) rgba(vars.$dark-tone-color, .1);
   }
 
   &::before {
     content: '';
-	box-shadow: 0 rem(4px) rem(32px) rgba($dark-tone-color, .25),
-	            0 rem(4px) rem(16px) rgba($dark-tone-color, .25);
+	box-shadow: 0 mixins.rem(4px) mixins.rem(32px) rgba(vars.$dark-tone-color, .25),
+	            0 mixins.rem(4px) mixins.rem(16px) rgba(vars.$dark-tone-color, .25);
   }
 }
 
@@ -285,22 +285,22 @@ select,
 ----------------------------------------------------------------- */
 
 .title {
-  color: $gray-header;
+  color: vars.$gray-header;
 
   &--tone {
-    color: $dark-tone-color;
+    color: vars.$dark-tone-color;
   }
 
   &__separate {
     &::before {
-	  background-color: $dark-tone-color;
+	  background-color: vars.$dark-tone-color;
     }
   }
 }
 
 .color {
   &--light {
-    color: rgba($gray-header,.5);
+    color: rgba(vars.$gray-header,.5);
   }
 }
 
@@ -311,42 +311,42 @@ select,
 
   &__author {
 	&::before {
-	  background-color: $gray-200-color;
+	  background-color: vars.$gray-200-color;
 	}
   }
 }
 
 a {
-  color: $dark-tone-color;
+  color: vars.$dark-tone-color;
 
   &:hover {
-    color: $dark-tone-color;
+    color: vars.$dark-tone-color;
   }
 }
 
-::-moz-selection {background: transparent; color: $dark-tone-color;}
-	 ::selection {background: transparent; color: $dark-tone-color;}
+::-moz-selection {background: transparent; color: vars.$dark-tone-color;}
+	 ::selection {background: transparent; color: vars.$dark-tone-color;}
 
 /* -----------------------------------------------------------------
     - Preloader
 ----------------------------------------------------------------- */
 
 .preloader {
-  background-color: $dark-black-1;
+  background-color: vars.$dark-black-1;
 
   &__progress {
     span {
-	  background: $dark-tone-color;
+	  background: vars.$dark-tone-color;
 	}
   }
 }
 
 .circle-pulse__1 {
-  background-color: $dark-tone-color;
+  background-color: vars.$dark-tone-color;
 }
 
 .circle-pulse__2 {
-  background-color: rgba($dark-tone-color,.7);
+  background-color: rgba(vars.$dark-tone-color,.7);
 }
 
 /* -----------------------------------------------------------------
@@ -359,10 +359,10 @@ a {
 
   &__item {
 	a {
-	  color: $gray-body;
+	  color: vars.$gray-body;
 
 	  &:hover {
-	    color: $dark-tone-color;
+	    color: vars.$dark-tone-color;
 	  }
 	}
   }
@@ -374,10 +374,10 @@ a {
 
 // Box
 .box {
-  background-color: $dark-black-2;
+  background-color: vars.$dark-black-2;
 
   &__second {
-    background-color: $dark-black-3;
+    background-color: vars.$dark-black-3;
   }
 }
 
@@ -420,7 +420,7 @@ a {
 // Social
 .social {
   &__link {
-    color: $white-color;
+    color: vars.$white-color;
   }
 }
 
@@ -428,14 +428,14 @@ a {
     - Navbar
 ----------------------------------------------------------------- */
 
-$size-nav: rem(60px);
+$size-nav: mixins.rem(60px);
 
 .circle-menu {
-  background-color: $dark-tone-color;
+  background-color: vars.$dark-tone-color;
 
   .open-menu & {
-    @media only screen and (max-width: $small) {
-	  box-shadow: 0 0 0 rem(1px) rgba($dark-tone-color, .5);
+    @media only screen and (max-width: media.$small) {
+	  box-shadow: 0 0 0 mixins.rem(1px) rgba(vars.$dark-tone-color, .5);
 	}
   }
 }
@@ -443,36 +443,36 @@ $size-nav: rem(60px);
 // Hamburger
 .hamburger {
   &.is-active .line {
-    @media only screen and (max-width: $small) {
-	  background-color: $dark-tone-color;
+    @media only screen and (max-width: media.$small) {
+	  background-color: vars.$dark-tone-color;
 	}
   }
 }
 
 
 .nav {
-  background: $dark-tone-color;
-  box-shadow: 0 rem(24px) rem(40px) rgba($dark-tone-color, .05),
-              0 rem(8px) rem(16px) rgba($dark-tone-color, .05);
+  background: vars.$dark-tone-color;
+  box-shadow: 0 mixins.rem(24px) mixins.rem(40px) rgba(vars.$dark-tone-color, .05),
+              0 mixins.rem(8px) mixins.rem(16px) rgba(vars.$dark-tone-color, .05);
 
-  @media only screen and (max-width: $small) {
-    color: $white-color;
-    background-color: $dark-black-2;
+  @media only screen and (max-width: media.$small) {
+    color: vars.$white-color;
+    background-color: vars.$dark-black-2;
   }
 
   &__item {
 	a {
-	  @media only screen and (max-width: $small) {
-	    color: rgba($white-color,.5);
+	  @media only screen and (max-width: media.$small) {
+	    color: rgba(vars.$white-color,.5);
 
 	    &:hover {
-	      color: rgba($white-color,1);
+	      color: rgba(vars.$white-color,1);
 	    }
 	  }
 
 	  &.active {
-		@media only screen and (max-width: $small) {
-		  color: $white-color;
+		@media only screen and (max-width: media.$small) {
+		  color: vars.$white-color;
 		}
 	  }
 	}
@@ -485,7 +485,7 @@ $size-nav: rem(60px);
 
 .case-item {
   &__caption {
-    color: $gray-body;
+    color: vars.$gray-body;
   }
 }
 
@@ -494,26 +494,26 @@ $size-nav: rem(60px);
 ----------------------------------------------------------------- */
 
 .review-item {
-  background-color: $dark-black-3;
+  background-color: vars.$dark-black-3;
   background-image: url(../icons/dark/icon-quote.svg);
 
   &__caption {
-    color: $gray-body;
+    color: vars.$gray-body;
   }
 }
 
 .swiper-pagination-bullet {
-  background: $dark-black-1;
+  background: vars.$dark-black-1;
 
   &__item {
 	&::before {
-	  background-color: $dark-tone-color;
-	  box-shadow: 0 0 0 rem(3px) rgba($dark-tone-color,.25);
+	  background-color: vars.$dark-tone-color;
+	  box-shadow: 0 0 0 mixins.rem(3px) rgba(vars.$dark-tone-color,.25);
 	}
   }
 
   &-active {
-    background: $dark-tone-color;
+    background: vars.$dark-tone-color;
   }
 }
 
@@ -524,17 +524,17 @@ $size-nav: rem(60px);
 .timeline {
 
   &__item {
-    border-left: 1px solid rgba($white-color, .15);
+    border-left: 1px solid rgba(vars.$white-color, .15);
 
 	&::before {
 	  content: '';
-	  background-color: $dark-tone-color;
-	  box-shadow: 0 0 0 rem(3px) rgba($dark-tone-color,.25);
+	  background-color: vars.$dark-tone-color;
+	  box-shadow: 0 0 0 mixins.rem(3px) rgba(vars.$dark-tone-color,.25);
 	}
   }
 
   &__period {
-    color: rgba($gray-body,.5);
+    color: rgba(vars.$gray-body,.5);
   }
 }
 
@@ -544,7 +544,7 @@ $size-nav: rem(60px);
 
 .gallery-grid {
   &__category {
-	color: rgba($gray-body,.5);
+	color: rgba(vars.$gray-body,.5);
   }
 }
 
@@ -552,35 +552,35 @@ $size-nav: rem(60px);
 @media only screen and (min-width: 769px) {
   .filter {
     &__link {
-	  color: rgba($gray-body,.5);
+	  color: rgba(vars.$gray-body,.5);
     }
 
     &__item {
 	  &.active a {
-	    color: $dark-tone-color;
+	    color: vars.$dark-tone-color;
 	  }
     }
   }
 }
 
-@media only screen and (max-width: $medium) {
+@media only screen and (max-width: media.$medium) {
   .select {
-    background-color: $dark-black-1;
-	color: $gray-body;
+    background-color: vars.$dark-black-1;
+	color: vars.$gray-body;
 
     ul {
-	  background-color: $dark-black-2;
-	  box-shadow: 0 10px 60px rgba($absolute-black,.25);
+	  background-color: vars.$dark-black-2;
+	  box-shadow: 0 10px 60px rgba(vars.$absolute-black,.25);
 
       li {
-        color: $gray-body;
+        color: vars.$gray-body;
 
 		&:hover {
-          background-color: rgba($dark-tone-color,1);
+          background-color: rgba(vars.$dark-tone-color,1);
         }
 
 	    a {
-		  color: $gray-body;
+		  color: vars.$gray-body;
 	    }
       }
     }
@@ -592,7 +592,7 @@ $size-nav: rem(60px);
 ----------------------------------------------------------------- */
 
 .news-item {
-  background-color: $dark-black-3;
+  background-color: vars.$dark-black-3;
   box-shadow: none;
 
   &:hover {
@@ -600,12 +600,12 @@ $size-nav: rem(60px);
   }
 
   &__date {
-    background-color: $dark-black-3;
-	color: $gray-body;
+    background-color: vars.$dark-black-3;
+	color: vars.$gray-body;
   }
 
   p {
-    color: $gray-body;
+    color: vars.$gray-body;
   }
 }
 
@@ -616,60 +616,60 @@ $size-nav: rem(60px);
 
 .header-post {
   &__date {
-    color: rgba($gray-body,.7);
+    color: rgba(vars.$gray-body,.7);
   }
 }
 
 .caption-post {
   p {
-    color: $gray-body;
+    color: vars.$gray-body;
   }
 }
 
 .gallery-post {
   &__caption {
-    color: rgba($gray-body,.7);
+    color: rgba(vars.$gray-body,.7);
 
 	a {
-	  color: rgba($gray-body,1);
+	  color: rgba(vars.$gray-body,1);
 	}
   }
 }
 
 .footer-post {
   &::before {
-	background-color: rgba($white-color,.6);
+	background-color: rgba(vars.$white-color,.6);
   }
 
   &__share {
-    color: $white-color;
+    color: vars.$white-color;
   }
 }
 
 // Comments
 .comment-box {
   &__inner {
-    background-color: $dark-black-3;
+    background-color: vars.$dark-black-3;
   }
 
   &__body {
-    color: $gray-body;
+    color: vars.$gray-body;
   }
 
   &__details {
-    color: $white-color;
+    color: vars.$white-color;
   }
 
   &__details-date {
-	color: rgba($gray-body,.3);
+	color: rgba(vars.$gray-body,.3);
   }
 
   &__footer {
-    color: rgba($gray-body,.5);
+    color: rgba(vars.$gray-body,.5);
 
 	li {
 	  &:hover {
-	    color: $dark-tone-color;
+	    color: vars.$dark-tone-color;
 	  }
 	}
   }
@@ -678,38 +678,38 @@ $size-nav: rem(60px);
 // Comment form
 .comment-form {
   .icon-smile {
-    color: rgba($gray-body,.5);
+    color: rgba(vars.$gray-body,.5);
 
 	&:hover {
-	  color: $gray-body;
+	  color: vars.$gray-body;
 	}
   }
 }
 
 // Scroll Indicator
 .scroll-line{
-  background: $dark-tone-color;
+  background: vars.$dark-tone-color;
 }
 
 // Emoji
 .emoji-wrap {
   .emoji {
     &:hover {
-	  box-shadow: 0 0 0px 2px rgba($white-color, .2);
+	  box-shadow: 0 0 0px 2px rgba(vars.$white-color, .2);
 	}
   }
 }
 
 // niceScroll
 .nicescroll-cursors {
-  background-color: rgba($white-color,.2)!important;
+  background-color: rgba(vars.$white-color,.2)!important;
   border-color: transparent!important;
 }
 
 // Social auth
 .social-auth {
   .font-icon {
-    background-color: $dark-tone-color;
+    background-color: vars.$dark-tone-color;
   }
 
   .icon-facebook {
@@ -734,16 +734,16 @@ $size-nav: rem(60px);
 ----------------------------------------------------------------- */
 
 .mapboxgl-popup-content {
-  color: $black-color;
+  color: vars.$black-color;
 }
 
 // Bact to top
 .back-to-top {
-  border-top: 1px solid $white-color;
-  border-left: 1px solid $white-color;
+  border-top: 1px solid vars.$white-color;
+  border-left: 1px solid vars.$white-color;
 }
 
 // Medium Zoom
 .medium-zoom-overlay {
-  background: $dark-black-1!important;
+  background: vars.$dark-black-1!important;
 }

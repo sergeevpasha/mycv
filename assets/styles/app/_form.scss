@@ -1,31 +1,35 @@
+@use "../variables/media";
+@use "../variables/mixins";
+@use "../variables/vars";
+
 /* -----------------------------------------------------------------
     - Form
 ----------------------------------------------------------------- */
 
 // Input Text
 %formStyle {
-  background-color: $gray-100-color;
-  border: 1px solid $gray-100-color;
-  border-radius: $border-rounded-20;
+  background-color: vars.$gray-100-color;
+  border: 1px solid vars.$gray-100-color;
+  border-radius: vars.$border-rounded-20;
   box-shadow: none;
-  color: $black-color;
+  color: vars.$black-color;
   font-size: inherit;
   height: auto;
-  padding: rem(14px) rem(22px) rem(13px);
+  padding: mixins.rem(14px) mixins.rem(22px) mixins.rem(13px);
   position: relative;
   width: 100%;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
 		  
-  @media only screen and (max-width: $small) {
-    padding: rem(13px) rem(22px) rem(12px);
+  @media only screen and (max-width: media.$small) {
+    padding: mixins.rem(13px) mixins.rem(22px) mixins.rem(12px);
   }  
 }
 
 %formStyle-focus {
-  background-color: $gray-100-color;
-  color: $black-color;
+  background-color: vars.$gray-100-color;
+  color: vars.$black-color;
   box-shadow: none;
   outline: none;
 }
@@ -43,27 +47,27 @@
   }
   
   &--white {
-    background-color: $white-color;
+    background-color: vars.$white-color;
 	
 	&:focus {
-	  background-color: $white-color;
+	  background-color: vars.$white-color;
 	}
   }
   
   &__icon {
-    padding-left: rem(54px);
+    padding-left: mixins.rem(54px);
 	
-	@media only screen and (max-width: $small) {
-	  padding-left: rem(45px);
+	@media only screen and (max-width: media.$small) {
+	  padding-left: mixins.rem(45px);
 	}
   }
 }
 
 .textarea {
   @extend %formStyle;
-  border-radius: $border-rounded-20;
+  border-radius: vars.$border-rounded-20;
   display: block;
-  padding: rem(13px) rem(19px);
+  padding: mixins.rem(13px) mixins.rem(19px);
   resize: none;
   
   &:focus {
@@ -71,84 +75,84 @@
   }
   
   &--white {
-    background-color: $white-color;
+    background-color: vars.$white-color;
 	
 	&:focus {
-	  background-color: $white-color;
+	  background-color: vars.$white-color;
 	}
   }  
 }
 
 .form-group {
-  margin-bottom: rem(32px);
+  margin-bottom: mixins.rem(32px);
   position: relative;
   
-  @media only screen and (max-width: $small) {
-    margin-bottom: rem(27px);
+  @media only screen and (max-width: media.$small) {
+    margin-bottom: mixins.rem(27px);
   }
   
   .font-icon {
-    color: $gray-300-color;
-	font-size: rem(17px);
+    color: vars.$gray-300-color;
+	font-size: mixins.rem(17px);
     margin: auto 0;
-	@include position(absolute, $top: 0, $left: rem(38px), $bottom: 0);
-	height: rem(16px);
-	width: rem(16px);
+	@include mixins.position(absolute, $top: 0, $left: mixins.rem(38px), $bottom: 0);
+	height: mixins.rem(16px);
+	width: mixins.rem(16px);
 	z-index: 1;
 	
-	@media only screen and (max-width: $small) {
-	  font-size: rem(16px);
-	  left: rem(33px);
+	@media only screen and (max-width: media.$small) {
+	  font-size: mixins.rem(16px);
+	  left: mixins.rem(33px);
 	}
   }
 }
 
 .help-block {
   position: absolute;
-  font-size: rem(12px);
+  font-size: mixins.rem(12px);
   line-height: 1.4;
-  padding-top: rem(5px);
-  padding-left: rem(6px);
+  padding-top: mixins.rem(5px);
+  padding-left: mixins.rem(6px);
   
-  @media only screen and (max-width: $small) {
-    font-size: rem(11px);
+  @media only screen and (max-width: media.$small) {
+    font-size: mixins.rem(11px);
   }
 }
 
 .with-errors {
-  color: $red-color;
+  color: vars.$red-color;
 }
 
 .has-error input,
 .has-error textarea,
 .has-error input:focus,
 .has-error textarea:focus {
-  border-color: $red-color;
+  border-color: vars.$red-color;
 }
 
 #validator-contact {
-  font-size: rem(14px);
-  margin-top: rem(16px);
+  font-size: mixins.rem(14px);
+  margin-top: mixins.rem(16px);
 }
 
 .form-control::-webkit-input-placeholder {
-  color: $gray-300-color;
+  color: vars.$gray-300-color;
 }
 
 .form-control::-moz-placeholder {
-  color: $gray-300-color;
+  color: vars.$gray-300-color;
 }
 
 .form-control:-ms-input-placeholder {
-  color: $gray-300-color;
+  color: vars.$gray-300-color;
 }
 
 .form-control::-ms-input-placeholder {
-  color: $gray-300-color;
+  color: vars.$gray-300-color;
 }
 
 .form-control::placeholder {
-  color: $gray-300-color;
+  color: vars.$gray-300-color;
 }
 
 input:invalid,
@@ -159,31 +163,31 @@ textarea:invalid {
 // Checkbox
 .custom-control-input {
   &:focus ~ .custom-control-label::before {
-    box-shadow: 0 0 0 rem(2px) rgba($tone-color, 0.25);
+    box-shadow: 0 0 0 mixins.rem(2px) rgba(vars.$tone-color, 0.25);
   }
 
   &:focus:not(:checked) ~ .custom-control-label::before {
-    border-color: $tone-color;
+    border-color: vars.$tone-color;
   }
 
   &:not(:disabled):active~.custom-control-label::before {
-    border-color: $white-color;
+    border-color: vars.$white-color;
     background-color: transparent;
   }
   
   &:checked~.custom-control-label::before {
-    border-color: $tone-color;
-    background-color: $tone-color;
+    border-color: vars.$tone-color;
+    background-color: vars.$tone-color;
   }
 }
 
 .custom-control-label {
   line-height: 1.55;
-  padding-left: rem(8px);
+  padding-left: mixins.rem(8px);
   
   &::before {
     background-color: transparent;
-    border: 1px solid $gray-200-color;
+    border: 1px solid vars.$gray-200-color;
   }	
 }
 
@@ -198,7 +202,7 @@ select,
   }
   
   option {
-    color: $black-color;
+    color: vars.$black-color;
   }
 }
 
@@ -206,18 +210,18 @@ select,
 .dropdown {
   &-menu {
     border: 0;
-    border-radius: $border-rounded-10;
-    box-shadow: 0 rem(8px) rem(40px) rgba($gray-300-color, .25);
-    color: $gray-400-color;
-    font-size: rem(15px);
+    border-radius: vars.$border-rounded-10;
+    box-shadow: 0 mixins.rem(8px) mixins.rem(40px) rgba(vars.$gray-300-color, .25);
+    color: vars.$gray-400-color;
+    font-size: mixins.rem(15px);
 	
 	&::before {
 	  content: '';
-	  border-left: rem(6px) solid transparent;
-      border-right: rem(6px) solid transparent;
-      border-bottom: rem(6px) solid $white-color;
+	  border-left: mixins.rem(6px) solid transparent;
+      border-right: mixins.rem(6px) solid transparent;
+      border-bottom: mixins.rem(6px) solid vars.$white-color;
 	  height: 0;
-	  @include position(absolute, $top: rem(-6px), $left: rem(17px));
+	  @include mixins.position(absolute, $top: mixins.rem(-6px), $left: mixins.rem(17px));
 	  width: 0;
 	}
   }
@@ -225,12 +229,12 @@ select,
   &.dropup {
     .dropdown-menu {
       &::before {
-	    border-left: rem(6px) solid transparent;
-        border-right: rem(6px) solid transparent;
-	    border-top: rem(6px) solid $white-color;
-        border-bottom: rem(6px) solid transparent;
+	    border-left: mixins.rem(6px) solid transparent;
+        border-right: mixins.rem(6px) solid transparent;
+	    border-top: mixins.rem(6px) solid vars.$white-color;
+        border-bottom: mixins.rem(6px) solid transparent;
 	    top: auto;
-	    bottom: rem(-12px);
+	    bottom: mixins.rem(-12px);
 	  }
 	}  
   }
@@ -238,16 +242,16 @@ select,
 
 // Progress
 .progress {
-  background-color: $gray-200-color;
-  border-radius: rem(16px);
-  height: rem(24px);
-  margin-bottom: rem(24px);
+  background-color: vars.$gray-200-color;
+  border-radius: mixins.rem(16px);
+  height: mixins.rem(24px);
+  margin-bottom: mixins.rem(24px);
   overflow: inherit;
   position: relative;
   text-align: right;
   
-  @media only screen and (max-width: $small) {
-    margin-bottom: rem(16px);
+  @media only screen and (max-width: media.$small) {
+    margin-bottom: mixins.rem(16px);
   }
   
   &:last-child {
@@ -255,8 +259,8 @@ select,
   }
   
   &-bar {
-    background-color: $tone-color;
-	border-radius: rem(16px);
+    background-color: vars.$tone-color;
+	border-radius: mixins.rem(16px);
 	overflow: hidden;
 	position: relative;
 	width: 0%;
@@ -264,11 +268,11 @@ select,
   }
   
   .progress-text {
-    @include flex($align: center, $justify: space-between);
+    @include mixins.flex($align: center, $justify: space-between);
 	height: 100%;
-	padding-left: rem(13px);
-	padding-right: rem(13px);
-	@include position(absolute, $top: 0, $left: 0);
+	padding-left: mixins.rem(13px);
+	padding-right: mixins.rem(13px);
+	@include mixins.position(absolute, $top: 0, $left: 0);
 	width: 100%;
 	z-index: 1;
   }
@@ -282,62 +286,62 @@ select,
 
 // Badges
 .badge {
-  font-size: rem(15px);
-  font-weight: $weight-400;
-  border-radius: rem(160px);
-  padding: rem(8px) rem(16px);
+  font-size: mixins.rem(15px);
+  font-weight: vars.$weight-400;
+  border-radius: mixins.rem(160px);
+  padding: mixins.rem(8px) mixins.rem(16px);
   
-  @media only screen and (max-width: $small) {
-    font-size: rem(14px);
+  @media only screen and (max-width: media.$small) {
+    font-size: mixins.rem(14px);
   }
   
   &--light {
-    background-color: $gray-50-color;
-	color: $black-color;
+    background-color: vars.$gray-50-color;
+	color: vars.$black-color;
   }
 
   &--gray {
-    background-color: $gray-200-color;
-	color: $black-color;
+    background-color: vars.$gray-200-color;
+	color: vars.$black-color;
   }
   
   &--dark {
-    background-color: $black-color;
-	color: $white-color;
+    background-color: vars.$black-color;
+	color: vars.$white-color;
   } 
  
   &--blue {
-    background-color: $tone-color;
-	color: $white-color;
+    background-color: vars.$tone-color;
+	color: vars.$white-color;
   }
   
   &--blue-gradient {
-    background-image: $gradient-1;
-	color: $white-color;
+    background-image: vars.$gradient-1;
+	color: vars.$white-color;
   }  
   
   &--aqua {
-    background-color: $tone-additional-color;
-	color: $white-color;
+    background-color: vars.$tone-additional-color;
+	color: vars.$white-color;
   }  
   
   &--red {
-    background-color: $red-color;
-	color: $white-color;
+    background-color: vars.$red-color;
+	color: vars.$white-color;
   }
 }
 
 // Tooltips
 .tooltip {
-  font-family: $font-body;  
+  font-family: vars.$font-body;  
   
   &-inner {
-    max-width: rem(200px);
-    padding: rem(4px) rem(9px) rem(4px);
-    background-color: $black-color;
-    border-radius: rem(4px);
-	box-shadow: 0 rem(16px) rem(32px) rgba($gray-300-color, .25), 
-                0 rem(2px) rem(16px) rgba($gray-300-color, .5);
+    max-width: mixins.rem(200px);
+    padding: mixins.rem(4px) mixins.rem(9px) mixins.rem(4px);
+    background-color: vars.$black-color;
+    border-radius: mixins.rem(4px);
+	box-shadow: 0 mixins.rem(16px) mixins.rem(32px) rgba(vars.$gray-300-color, .25), 
+                0 mixins.rem(2px) mixins.rem(16px) rgba(vars.$gray-300-color, .5);
   }
   
   &.show {
@@ -347,24 +351,24 @@ select,
 
 .bs-tooltip-top .arrow::before, 
 .bs-tooltip-auto[x-placement^="top"] .arrow::before {
-  border-width: rem(5px) rem(5px) 0;
-  border-top-color: $black-color;
+  border-width: mixins.rem(5px) mixins.rem(5px) 0;
+  border-top-color: vars.$black-color;
 }
 
 .bs-tooltip-right .arrow::before, 
 .bs-tooltip-auto[x-placement^="right"] .arrow::before {
-  border-width: rem(5px) rem(5px) rem(5px) 0;
-  border-right-color: $black-color;
+  border-width: mixins.rem(5px) mixins.rem(5px) mixins.rem(5px) 0;
+  border-right-color: vars.$black-color;
 }
 
 .bs-tooltip-left .arrow::before, 
 .bs-tooltip-auto[x-placement^="left"] .arrow::before {
-  border-width: rem(5px) 0 rem(5px) rem(5px);
-  border-left-color: $black-color;
+  border-width: mixins.rem(5px) 0 mixins.rem(5px) mixins.rem(5px);
+  border-left-color: vars.$black-color;
 }
 
 .bs-tooltip-bottom .arrow::before, 
 .bs-tooltip-auto[x-placement^="bottom"] .arrow::before {
-  border-width: 0 rem(5px) rem(5px);
-  border-bottom-color: $black-color;
+  border-width: 0 mixins.rem(5px) mixins.rem(5px);
+  border-bottom-color: vars.$black-color;
 }

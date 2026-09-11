@@ -29,37 +29,36 @@ $version: "1.1.0";
 
 ------------------------------------------------ */
 
-// Vendor
+// Variables
+@use 'variables/vars';
+@use 'variables/mixins';
+@use 'variables/media';
+
+// General settings
+@use 'app/general';
+@use 'app/background';
+@use 'app/typography';
+
+// Components
+@use 'app/form';
+@use 'app/button';
+@use 'app/sidebar';
+@use 'app/sections';
+@use 'app/navbar';
+@use 'app/footer';
+
+// Pages, layouts
+@use 'app/cases';
+@use 'app/clients';
+@use 'app/contact';
+@use 'app/testimonials';
+@use 'app/timeline';
+
+@use 'app/other';
+
+// Vendor (plain CSS, emitted before the rules above)
 @import 'vendors/bootstrap.min.css';
 @import 'vendors/swiper.min.css';
 
 // Font Icons
 @import '../icons/style.css';
-
-// Variables
-@import 'variables/vars';
-@import 'variables/mixins';
-@import 'variables/media';
-
-// General settings
-@import 'app/general';
-@import 'app/background';
-@import 'app/typography';
-
-// Components
-@import 'app/form';
-@import 'app/button';
-@import 'app/sidebar';
-@import 'app/sections';
-@import 'app/navbar';
-@import 'app/footer';
-
-// Pages, layouts
-@import 'app/cases';
-@import 'app/clients';
-@import 'app/contact';
-@import 'app/testimonials';
-@import 'app/timeline';
-
-@import 'app/other';
-
