@@ -14,5 +14,17 @@
   "sixthProjectTitle": "MeTime SAAS",
   "sixthProjectDescription": "MeTime provides a simple way to connect medical professionals and people looking for cosmetic procedures. My main goal on this project was to implement VueJs frontend with a newly created design.",
   "seventhProjectTitle": "VitaStudents",
-  "seventhProjectDescription": "VitaStudent allow people around the world to find accommodation for their study in UK/ES. I am responsible for destructuring monolith system and use DDD to build multiple apps with the ability for users to check their booking, see accommodation updates, receive required services. Setting up AWS Fargate, writing required Lambda functions, syncing scripts. Mostly using NodeJs, Typescript and React here."
+  "seventhProjectDescription": "VitaStudent allow people around the world to find accommodation for their study in UK/ES. I was responsible for destructuring monolith system and use DDD to build multiple apps with the ability for users to check their booking, see accommodation updates, receive required services. Setting up AWS Fargate, writing required Lambda functions, syncing scripts. Mostly using NodeJs, Typescript and React here.",
+  "eighthProjectTitle": "Pharmacy Locum Agency Platform",
+  "eighthProjectDescription": "Supported and developed new features for a pharmacy locum agency operating in the UK and Ireland. The platform is a Laravel, Vue.js and PostgreSQL monolith.",
+  "ninthProjectTitle": "High-Load Ads Platform",
+  "ninthProjectDescription": "Supported a high-load advertising platform built on Laravel, Vue.js and MariaDB, working with ClickHouse and Go services. Optimized SQL queries and brought engineering best practices into the team's workflow.",
+  "tenthProjectTitle": "iGMS Channel Manager",
+  "tenthProjectDescription": "iGMS is a vacation-rental property management SaaS built with PHP and React. I integrated it with Airbnb, VRBO and Google Vacation Rentals, giving property owners a single channel manager for all their listings. Implemented dynamic pricing synchronization with external revenue-management services to optimize nightly rates on demand and supply, and ChatGPT-based auto-replies to guest FAQs, cutting hosts' manual response workload.",
+  "eleventhProjectTitle": "iGMS Website Builder",
+  "eleventhProjectDescription": "Built a website builder for the iGMS platform that lets hosts launch their own booking sites and take direct reservations, reducing their dependency on OTA commissions.",
+  "twelfthProjectTitle": "AI Knowledge Assistant",
+  "twelfthProjectDescription": "Building an internal AI assistant on top of a large knowledge base using RAG, delivering fast and reliable chat answers, plus instant multilingual translation between users.",
+  "thirteenthProjectTitle": "Workforce Management Platform",
+  "thirteenthProjectDescription": "Architecting an internal workforce platform that gives the company operational control and analytics across a large employee base. Nginx + Lua (OpenResty) handles requests with ultra-low latency, Go runs heavy scheduled and automation jobs, and Laravel/Vue power the core services, with PostgreSQL, Redis and ClickHouse for storage, caching and real-time statistics."
 }

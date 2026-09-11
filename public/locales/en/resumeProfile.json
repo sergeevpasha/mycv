@@ -2,6 +2,8 @@
   "resume": "Resume",
   "backendSkills": "Backend Skills",
   "frontendSkills": "Frontend Skills",
+  "databaseSkills": "Database Skills",
   "devOpsSkills": "DevOps Skills",
+  "aiSkills": "AI Engineering",
   "otherSkills": "Other Skills"
 }

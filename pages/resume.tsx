@@ -35,12 +35,12 @@ function Resume(props: ResumeProps) {
                         <div className="box box__second">
                             <ProgressBar value={100} title="PHP" />
                             <ProgressBar value={100} title="Laravel" />
+                            <ProgressBar value={60} title="Go" />
                             <ProgressBar value={60} title="NodeJS" />
+                            <ProgressBar value={65} title="NestJS" />
                             <ProgressBar value={65} title="ExpressJS" />
-                            <ProgressBar value={90} title="Postgres" />
-                            <ProgressBar value={75} title="Mysql" />
-                            <ProgressBar value={65} title="Redis" />
-                            <ProgressBar value={50} title="mongoDB" />
+                            <ProgressBar value={40} title="Python" />
+                            <ProgressBar value={60} title="Lua / OpenResty" />
                             <ProgressBar value={50} title="GraphQL" />
                         </div>
                     </div>
@@ -63,9 +63,22 @@ function Resume(props: ResumeProps) {
             <div className="box-inner box-inner--rounded">
                 <div className="row">
                     <div className="col-12 col-lg-6">
+                        <h2 className="title title--h3">{t('databaseSkills')}</h2>
+                        <div className="box box__second">
+                            <ProgressBar value={90} title="Postgres" />
+                            <ProgressBar value={75} title="MySQL / MariaDB" />
+                            <ProgressBar value={70} title="ClickHouse" />
+                            <ProgressBar value={65} title="Redis" />
+                            <ProgressBar value={50} title="mongoDB" />
+                            <ProgressBar value={40} title="ELK" />
+                            <ProgressBar value={90} title="SQL Optimization" />
+                        </div>
+                    </div>
+                    <div className="col-12 col-lg-6 mt-4 mt-lg-0">
                         <h2 className="title title--h3">{t('devOpsSkills')}</h2>
                         <div className="box box__second">
                             <ProgressBar value={60} title="AWS" />
+                            <ProgressBar value={65} title="AWS CDK" />
                             <ProgressBar value={80} title="Docker" />
                             <ProgressBar value={90} title="Nginx" />
                             <ProgressBar value={70} title="Linux" />
@@ -73,16 +86,30 @@ function Resume(props: ResumeProps) {
                             <ProgressBar value={50} title="Jenkins" />
                         </div>
                     </div>
+                </div>
+            </div>
+            <div className="box-inner box-inner--rounded">
+                <div className="row">
+                    <div className="col-12 col-lg-6">
+                        <h2 className="title title--h3">{t('aiSkills')}</h2>
+                        <div className="box box__second">
+                            <ProgressBar value={85} title="LLM APIs (OpenAI, Claude)" />
+                            <ProgressBar value={75} title="RAG & Vector Search" />
+                            <ProgressBar value={85} title="Prompt Engineering" />
+                            <ProgressBar value={85} title="AI Agents & MCP" />
+                            <ProgressBar value={90} title="AI Coding (Claude Code, Cursor)" />
+                        </div>
+                    </div>
                     <div className="col-12 col-lg-6 mt-4 mt-lg-0">
                         <h2 className="title title--h3">{t('otherSkills')}</h2>
                         <div className="box box__second">
                             <ProgressBar value={100} title="Git" />
                             <ProgressBar value={100} title="Swagger" />
-                            <ProgressBar value={40} title="ELK" />
                             <ProgressBar value={50} title="Algolia" />
                             <ProgressBar value={70} title="Behat" />
                             <ProgressBar value={100} title="Jira" />
                             <ProgressBar value={70} title="Serverless" />
+                            <ProgressBar value={80} title="Microservices" />
                         </div>
                     </div>
                 </div>

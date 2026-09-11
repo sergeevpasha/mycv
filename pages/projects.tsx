@@ -22,8 +22,33 @@ function Projects(props: ProjectsProps) {
             <div className="pb-0">
                 <div className="row">
                     <article className="timeline__item">
+                        <h5 className="title title--h5 timeline__title">{t('thirteenthProjectTitle')}</h5>
+                        <span className="timeline__period">03/2025 — {t('present')}</span>
+                        <p className="timeline__description">{t('thirteenthProjectDescription')}</p>
+                    </article>
+                    <article className="timeline__item">
+                        <h5 className="title title--h5 timeline__title">{t('twelfthProjectTitle')}</h5>
+                        <span className="timeline__period">03/2025 — {t('present')}</span>
+                        <p className="timeline__description">{t('twelfthProjectDescription')}</p>
+                    </article>
+                    <article className="timeline__item">
+                        <h5 className="title title--h5 timeline__title">{t('eleventhProjectTitle')}</h5>
+                        <span className="timeline__period">07/2023 — 12/2024</span>
+                        <p className="timeline__description">{t('eleventhProjectDescription')}</p>
+                    </article>
+                    <article className="timeline__item">
+                        <h5 className="title title--h5 timeline__title">{t('tenthProjectTitle')}</h5>
+                        <span className="timeline__period">05/2023 — 12/2024</span>
+                        <p className="timeline__description">{t('tenthProjectDescription')}</p>
+                    </article>
+                    <article className="timeline__item">
+                        <h5 className="title title--h5 timeline__title">{t('ninthProjectTitle')}</h5>
+                        <span className="timeline__period">2022</span>
+                        <p className="timeline__description">{t('ninthProjectDescription')}</p>
+                    </article>
+                    <article className="timeline__item">
                         <h5 className="title title--h5 timeline__title">{t('seventhProjectTitle')}</h5>
-                        <span className="timeline__period">10/2021 — {t('present')}</span>
+                        <span className="timeline__period">10/2021 — 09/2022</span>
                         <p className="timeline__description">{t('seventhProjectDescription')}</p>
                     </article>
                     <article className="timeline__item">
@@ -40,6 +65,11 @@ function Projects(props: ProjectsProps) {
                         <h5 className="title title--h5 timeline__title">{t('fourthProjectTitle')}</h5>
                         <span className="timeline__period">08/2020 — 02/2021</span>
                         <p className="timeline__description">{t('fourthProjectDescription')}</p>
+                    </article>
+                    <article className="timeline__item">
+                        <h5 className="title title--h5 timeline__title">{t('eighthProjectTitle')}</h5>
+                        <span className="timeline__period">2020</span>
+                        <p className="timeline__description">{t('eighthProjectDescription')}</p>
                     </article>
                     <article className="timeline__item">
                         <h5 className="title title--h5 timeline__title">{t('thirdProjectTitle')}</h5>
