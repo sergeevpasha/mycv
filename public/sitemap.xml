@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://sergeevpasha.com/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://sergeevpasha.com/" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://sergeevpasha.com/ru" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://sergeevpasha.com/de" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sergeevpasha.com/" />
+    </url>
+    <url>
+        <loc>https://sergeevpasha.com/ru</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://sergeevpasha.com/" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://sergeevpasha.com/ru" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://sergeevpasha.com/de" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sergeevpasha.com/" />
+    </url>
+    <url>
+        <loc>https://sergeevpasha.com/de</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://sergeevpasha.com/" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://sergeevpasha.com/ru" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://sergeevpasha.com/de" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sergeevpasha.com/" />
+    </url>
+    <url>
+        <loc>https://sergeevpasha.com/resume</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://sergeevpasha.com/resume" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://sergeevpasha.com/ru/resume" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://sergeevpasha.com/de/resume" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sergeevpasha.com/resume" />
+    </url>
+    <url>
+        <loc>https://sergeevpasha.com/ru/resume</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://sergeevpasha.com/resume" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://sergeevpasha.com/ru/resume" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://sergeevpasha.com/de/resume" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sergeevpasha.com/resume" />
+    </url>
+    <url>
+        <loc>https://sergeevpasha.com/de/resume</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://sergeevpasha.com/resume" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://sergeevpasha.com/ru/resume" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://sergeevpasha.com/de/resume" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sergeevpasha.com/resume" />
+    </url>
+    <url>
+        <loc>https://sergeevpasha.com/projects</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://sergeevpasha.com/projects" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://sergeevpasha.com/ru/projects" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://sergeevpasha.com/de/projects" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sergeevpasha.com/projects" />
+    </url>
+    <url>
+        <loc>https://sergeevpasha.com/ru/projects</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://sergeevpasha.com/projects" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://sergeevpasha.com/ru/projects" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://sergeevpasha.com/de/projects" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sergeevpasha.com/projects" />
+    </url>
+    <url>
+        <loc>https://sergeevpasha.com/de/projects</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://sergeevpasha.com/projects" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://sergeevpasha.com/ru/projects" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://sergeevpasha.com/de/projects" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sergeevpasha.com/projects" />
+    </url>
+    <url>
+        <loc>https://sergeevpasha.com/contact</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://sergeevpasha.com/contact" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://sergeevpasha.com/ru/contact" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://sergeevpasha.com/de/contact" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sergeevpasha.com/contact" />
+    </url>
+    <url>
+        <loc>https://sergeevpasha.com/ru/contact</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://sergeevpasha.com/contact" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://sergeevpasha.com/ru/contact" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://sergeevpasha.com/de/contact" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sergeevpasha.com/contact" />
+    </url>
+    <url>
+        <loc>https://sergeevpasha.com/de/contact</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://sergeevpasha.com/contact" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://sergeevpasha.com/ru/contact" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://sergeevpasha.com/de/contact" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sergeevpasha.com/contact" />
+    </url>
+</urlset>

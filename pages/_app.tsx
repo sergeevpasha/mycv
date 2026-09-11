@@ -2,7 +2,7 @@ import '../assets/styles/style.scss';
 import '../assets/styles/style-dark.scss';
 import type { AppProps } from 'next/app';
 import { appWithTranslation, useTranslation } from 'next-i18next/pages';
-import React, { useSyncExternalStore } from 'react';
+import React from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Script from 'next/script';
@@ -10,17 +10,12 @@ import { Analytics } from '@vercel/analytics/next';
 import Layout from '../layouts/Main';
 import Sidebar from '../components/sidebar';
 import Navigation from '../components/navigation';
+import pageUrl, { OG_LOCALES, SITE_URL } from '../utils/site';
 
 function MyApp({ Component, pageProps }: AppProps) {
     const { t } = useTranslation('common');
-    const router = useRouter();
-    const host = useSyncExternalStore(
-        () => () => {},
-        () => window.location.host,
-        () => ''
-    );
-    const localePath = `https://${host}${router.pathname}${router.locale === 'en' ? '' : router.locale}`;
-    const ogUrl = host ? localePath.replace(/\/$/, '') : '';
+    const { locale = 'en', defaultLocale = 'en', locales = [], pathname } = useRouter();
+    const url = pageUrl(locale, defaultLocale, pathname);
 
     return (
         <Layout>
@@ -35,20 +30,33 @@ function MyApp({ Component, pageProps }: AppProps) {
                     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
                     <link rel="manifest" href="/site.webmanifest" />
                     <meta name="robots" content="index, follow" />
+                    <link rel="canonical" href={url} />
+                    {locales.map(alternate => (
+                        <link
+                            key={alternate}
+                            rel="alternate"
+                            hrefLang={alternate}
+                            href={pageUrl(alternate, defaultLocale, pathname)}
+                        />
+                    ))}
+                    <link rel="alternate" hrefLang="x-default" href={pageUrl(defaultLocale, defaultLocale, pathname)} />
                     <meta name="apple-mobile-web-app-title" content={t('applicationName')} />
                     <meta name="application-name" content={t('applicationName')} />
                     <meta name="msapplication-TileColor" content="#2d89ef" />
                     <meta name="theme-color" content="#ffffff" />
                     <meta property="og:title" content={t('title')} />
                     <meta property="og:description" content={t('description')} />
-                    <meta property="og:url" content={ogUrl} />
-                    <meta property="og:image" content="/apple-touch-icon.png" />
+                    <meta property="og:url" content={url} />
+                    <meta property="og:image" content={`${SITE_URL}/images/me.jpeg`} />
+                    <meta property="og:image:width" content="400" />
+                    <meta property="og:image:height" content="400" />
+                    <meta property="og:locale" content={OG_LOCALES[locale]} />
                     <meta property="og:site_name" content={t('applicationName')} />
                     <meta property="og:type" content="profile" />
                     <meta property="profile:first_name" content={t('firstName')} />
                     <meta property="profile:last_name" content={t('lastName')} />
                     <meta property="profile:username" content={t('userName')} />
-                    <meta property="profile:gender" content={t('male')} />
+                    <meta property="profile:gender" content="male" />
                 </Head>
                 <div className="row sticky-parent">
                     <aside className="col-12 col-md-12 col-xl-3">
