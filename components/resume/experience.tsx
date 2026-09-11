@@ -1,5 +1,6 @@
 import React from 'react';
 import { WithTranslation, withTranslation } from 'next-i18next/pages';
+import Image from 'next/image';
 
 type EducationProps = WithTranslation;
 
@@ -8,7 +9,8 @@ function Experience(props: EducationProps) {
     return (
         <div className="col-12 col-lg-6">
             <h2 className="title title--h3">
-                <img className="title-icon" src="/icons/dark/icon-experience.svg" alt="" /> {t('experience')}
+                <Image className="title-icon" src="/icons/dark/icon-experience.svg" alt="" width={40} height={40} />{' '}
+                {t('experience')}
             </h2>
             <div className="timeline">
                 <article className="timeline__item">

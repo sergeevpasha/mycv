@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
 import { withTranslation, WithTranslation } from 'next-i18next/pages';
 import emailjs from '@emailjs/browser';
@@ -14,29 +14,28 @@ export const getStaticProps = async ({ locale }: PageProps) => ({
 
 type ContactProps = WithTranslation;
 
+type SendStatus = 'idle' | 'sent' | 'failed';
+
+const statusClassName: Record<SendStatus, string> = {
+    idle: 'hidden',
+    sent: 'validation-success',
+    failed: 'validation-danger',
+};
+
 function Contact(props: ContactProps) {
     const { t } = props;
     const form = useRef<HTMLFormElement>(null);
-    const valid = useRef<HTMLDivElement>(null);
-
-    emailjs.init('6sTy98Mn5vPyUzWWY');
+    const [status, setStatus] = useState<SendStatus>('idle');
 
     function sendEmail(event: React.FormEvent<HTMLFormElement>): void {
         event.preventDefault();
-        emailjs.sendForm('gmail_cv_servervice', 'template_cv', form.current || '', '6sTy98Mn5vPyUzWWY').then(
+        if (!form.current) return;
+        emailjs.sendForm('gmail_cv_servervice', 'template_cv', form.current, '6sTy98Mn5vPyUzWWY').then(
             () => {
-                if (valid.current) {
-                    valid.current.className = 'validation-success';
-                    valid.current.innerHTML = 'Thanks! Your message has been sent.';
-                }
-                if (form.current) form.current.reset();
+                setStatus('sent');
+                form.current?.reset();
             },
-            () => {
-                if (valid.current) {
-                    valid.current.className = 'validation-danger';
-                    valid.current.innerHTML = 'Please fill in the form...!';
-                }
-            }
+            () => setStatus('failed')
         );
     }
 
@@ -84,7 +83,10 @@ function Contact(props: ContactProps) {
                 </div>
                 <div className="row">
                     <div className="col-12 col-md-6 order-2 order-md-1 text-center text-md-left">
-                        <div id="validator-contact" ref={valid} className="hidden" />
+                        <div id="validator-contact" className={statusClassName[status]}>
+                            {status === 'sent' && t('messageSent')}
+                            {status === 'failed' && t('messageFailed')}
+                        </div>
                     </div>
                     <div className="col-12 col-md-6 order-1 order-md-2 text-right">
                         <button type="submit" className="btn">

@@ -1,6 +1,7 @@
 import React from 'react';
 import { serverSideTranslations } from 'next-i18next/pages/serverSideTranslations';
 import { WithTranslation, withTranslation } from 'next-i18next/pages';
+import Image from 'next/image';
 import { PageProps } from '../types';
 import Testimonials from '../components/testimonials';
 import Clients from '../components/clients';
@@ -29,7 +30,13 @@ function Home(props: HomeProps) {
                 <div className="row">
                     <div className="col-12 col-lg-6">
                         <div className="case-item box box__second">
-                            <img className="case-item__icon" src="/icons/dark/icon-design.svg" alt="" />
+                            <Image
+                                className="case-item__icon"
+                                src="/icons/dark/icon-design.svg"
+                                alt=""
+                                width={40}
+                                height={40}
+                            />
                             <div>
                                 <h3 className="title title--h5">{t('backendDevTitle')}</h3>
                                 <p className="case-item__caption">{t('backendDevBody')}</p>
@@ -38,7 +45,13 @@ function Home(props: HomeProps) {
                     </div>
                     <div className="col-12 col-lg-6">
                         <div className="case-item box box__second">
-                            <img className="case-item__icon" src="/icons/dark/icon-dev.svg" alt="" />
+                            <Image
+                                className="case-item__icon"
+                                src="/icons/dark/icon-dev.svg"
+                                alt=""
+                                width={40}
+                                height={40}
+                            />
                             <div>
                                 <h3 className="title title--h5">{t('frontendDevTitle')}</h3>
                                 <p className="case-item__caption">{t('frontendDevBody')}</p>
@@ -47,7 +60,13 @@ function Home(props: HomeProps) {
                     </div>
                     <div className="col-12 col-lg-6">
                         <div className="case-item box box__second">
-                            <img className="case-item__icon" src="/icons/dark/icon-app.svg" alt="" />
+                            <Image
+                                className="case-item__icon"
+                                src="/icons/dark/icon-app.svg"
+                                alt=""
+                                width={40}
+                                height={40}
+                            />
                             <div>
                                 <h3 className="title title--h5">{t('htmlDevTitle')}</h3>
                                 <p className="case-item__caption">{t('htmlDevBody')}</p>
@@ -56,7 +75,13 @@ function Home(props: HomeProps) {
                     </div>
                     <div className="col-12 col-lg-6">
                         <div className="case-item box box__second">
-                            <img className="case-item__icon" src="/icons/dark/icon-database.svg" alt="" />
+                            <Image
+                                className="case-item__icon"
+                                src="/icons/dark/icon-database.svg"
+                                alt=""
+                                width={40}
+                                height={40}
+                            />
                             <div>
                                 <h3 className="title title--h5">{t('databaseArchitectureTitle')}</h3>
                                 <p className="case-item__caption">{t('databaseArchitectureBody')}</p>

@@ -61,7 +61,9 @@ function MyApp({ Component, pageProps }: AppProps) {
                                 <Component {...pageProps} />
                             </div>
                         </div>
-                        <footer className="footer">© 2022</footer>
+                        <footer className="footer" suppressHydrationWarning>
+                            © {new Date().getFullYear()}
+                        </footer>
                     </div>
                 </div>
                 <svg className="svg-defs">

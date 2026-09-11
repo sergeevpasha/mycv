@@ -1,5 +1,6 @@
 import React, { createRef, useEffect } from 'react';
 import { WithTranslation, withTranslation } from 'next-i18next/pages';
+import Image from 'next/image';
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
 
@@ -45,31 +46,31 @@ function Clients(props: ClientProps) {
                 <div className="swiper-wrapper">
                     <div className="swiper-slide">
                         <a href="https://insly.com/en/" target="_blank" rel="noreferrer">
-                            <img src="/clients/insly.svg" alt="Insly" height={50} />
+                            <Image src="/clients/insly.svg" alt="Insly" width={50} height={50} />
                             Insly
                         </a>
                     </div>
                     <div className="swiper-slide">
                         <a href="https://en.uetel.ru/" target="_blank" rel="noreferrer">
-                            <img src="/clients/uralenergotel.png" alt="Uralenergotel" height={50} />
+                            <Image src="/clients/uralenergotel.png" alt="Uralenergotel" width={50} height={50} />
                             Uralenergotel
                         </a>
                     </div>
                     <div className="swiper-slide">
                         <a href="https://energetichub.com/" target="_blank" rel="noreferrer">
-                            <img src="/clients/energetichub.png" alt="EnergeticHub" height={50} />
+                            <Image src="/clients/energetichub.png" alt="EnergeticHub" width={50} height={50} />
                             EnergeticHub
                         </a>
                     </div>
                     <div className="swiper-slide">
                         <a href="https://www.vitastudent.com/en/" target="_blank" rel="noreferrer">
-                            <img src="/clients/vitastudent.svg" alt="VitaStudent" height={50} />
+                            <Image src="/clients/vitastudent.svg" alt="VitaStudent" width={49} height={50} />
                             VitaStudent
                         </a>
                     </div>
                     <div className="swiper-slide">
                         <a href="https://metime.com/" target="_blank" rel="noreferrer">
-                            <img src="/clients/metime.png" alt="MeTime" height={50} />
+                            <Image src="/clients/metime.png" alt="MeTime" width={50} height={50} />
                             MeTime
                         </a>
                     </div>

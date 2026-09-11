@@ -4,5 +4,7 @@
   "fullName": "Full name",
   "emailAddress": "Email address",
   "yourMessage": "Your Message",
-  "sendMessage": "Send Message"
+  "sendMessage": "Send Message",
+  "messageSent": "Thanks! Your message has been sent.",
+  "messageFailed": "Sorry, your message couldn't be sent. Please try again or email me directly."
 }

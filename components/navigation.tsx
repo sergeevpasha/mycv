@@ -93,6 +93,13 @@ class Sidebar extends Component<NavigationProps, NavigationState> {
         }
     };
 
+    onMenuKeyDown = (event: React.KeyboardEvent<HTMLDivElement>): void => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            this.toggleMenu();
+        }
+    };
+
     render() {
         const { t } = this.props;
         const { isActiveMenu, menu } = this.state;
@@ -102,8 +109,10 @@ class Sidebar extends Component<NavigationProps, NavigationState> {
                     role="button"
                     className="circle-menu"
                     onClick={this.toggleMenu}
-                    onKeyDown={this.toggleMenu}
+                    onKeyDown={this.onMenuKeyDown}
                     tabIndex={0}
+                    aria-label={t('toggleMenu')}
+                    aria-expanded={isActiveMenu}
                 >
                     <div className={`hamburger ${isActiveMenu ? 'is-active' : ''}`}>
                         <div className="line" />
