@@ -1,0 +1,62 @@
+@use "../variables/media";
+@use "../variables/mixins";
+@use "../variables/vars";
+
+/* -----------------------------------------------------------------
+    - Cookie consent
+----------------------------------------------------------------- */
+
+.cookie-consent {
+  background-color: vars.$dark-black-2;
+  border-radius: vars.$border-rounded-20;
+  box-shadow: 0 mixins.rem(16px) mixins.rem(40px) rgba(vars.$absolute-black, .35);
+  color: vars.$gray-body;
+  font-size: mixins.rem(14px);
+  max-width: mixins.rem(420px);
+  padding: mixins.rem(20px) mixins.rem(24px);
+  @include mixins.position(fixed, $right: mixins.rem(24px), $bottom: mixins.rem(24px));
+  z-index: 1000;
+
+  &__text {
+    margin-bottom: mixins.rem(16px);
+  }
+
+  &__actions {
+    display: flex;
+    gap: mixins.rem(12px);
+    justify-content: flex-end;
+  }
+
+  .btn {
+    font-size: mixins.rem(14px);
+    padding: mixins.rem(10px) mixins.rem(24px) mixins.rem(9px);
+  }
+
+  .btn.cookie-consent__decline {
+    background-color: transparent;
+    border: 1px solid rgba(vars.$white-color, .2);
+    box-shadow: none;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: media.$small) {
+    bottom: mixins.rem(12px);
+    left: mixins.rem(12px);
+    max-width: none;
+    right: mixins.rem(12px);
+  }
+}
+
+.footer__cookies {
+  background: none;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  font-size: inherit;
+  margin-left: mixins.rem(12px);
+  padding: 0;
+  text-decoration: underline;
+}
