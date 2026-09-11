@@ -137,7 +137,10 @@ $size-nav: mixins.rem(60px);
   @include mixins.flex($align: center, $justify: center);
   height: 100%;
   overflow: hidden;
-  
+  // Starts collapsed like the menu timeline in navigation.tsx, so the server-rendered menu
+  // doesn't show open until hydration collapses it (layout shift, strip over the page on phones)
+  width: 0;
+
   @media only screen and (max-width: media.$medium) {
     border-radius: mixins.rem(20px) 0 0 mixins.rem(32px);
     font-size: mixins.rem(14px);
@@ -150,12 +153,15 @@ $size-nav: mixins.rem(60px);
 	background-image: none;
     border-radius: 0;
     box-shadow: none;
-	font-size: mixins.rem(24px)
+	font-size: mixins.rem(24px);
+	opacity: 0;
   }
   
   &__item {
     margin-right: mixins.rem(48px);
-	
+    opacity: 0;
+    transform: translateX(70px);
+
 	@media only screen and (max-width: media.$large) {
 	  margin-right: mixins.rem(32px);
 	}
